@@ -1,7 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
-import DraftNote from '../components/DraftNote.astro';
 import { SITE } from '../lib/site';
 ---
 <Base title="Join the Lab" description="Open positions and guidance for prospective undergraduate, graduate, and postdoctoral members of the Nemenman group.">
@@ -23,7 +22,6 @@ import { SITE } from '../lib/site';
           <p class="mt-2 text-sm leading-relaxed">Emory's endowed fellowships for postdocs whose research bridges physics, biology, chemistry, mathematics, and/or computer science, with a focus on theoretical approaches to living systems. Fellows pursue a semi-independent research program for up to three years, mentored by Emory College faculty. The fellowship covers half of the stipend, and the mentor covers the rest, so please contact me before applying if you would like to work with our group. Applications are accepted throughout the year and awards are made on a rolling basis.</p>
           <a href="https://livingtheory.emory.edu/programs/tarbutton-fellows.html" class="mt-3 inline-block text-sm font-medium text-navy hover:underline">Details and how to apply (TMLS) →</a>
         </div>
-        <DraftNote>Any other openings to list (postdoc, graduate)?</DraftNote>
         <h3 class="smallcaps mt-6 text-xs text-gold">Whom to contact</h3>
         <p class="mt-2 text-sm leading-relaxed">Ilya Nemenman, <a class="link" href={`mailto:${SITE.email}`}>{SITE.email}</a>. For postdoctoral positions, please send a CV, a publications list, a brief description of your research experience, and the names of three references.</p>
       </div>
@@ -45,7 +43,6 @@ import { SITE } from '../lib/site';
         <li><a href="https://biomed.emory.edu/PROGRAM_SITES/PBEE/">Population Biology, Ecology, and Evolution</a></li>
       </ul>
       <p>Different programs have different admission requirements, and you should explore the relevant sections of the above web sites.</p>
-      <DraftNote>The graduate-student answer is the 2014 FAQ from the old site, verbatim except for updated links. Please check that "one graduate student per year" and the program list are still right.</DraftNote>
     </div>
   </div>
 </Base>
