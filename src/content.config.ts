@@ -102,6 +102,7 @@ const research = defineCollection({
       teaser: z.string(),
       projects: z.array(z.object({ title: z.string(), detail: z.string().optional() })).optional(),
       people: z.array(z.string()).optional(), // slugs of files in src/content/people
+      people_note: z.string().optional(), // shown in the People section, Markdown links allowed
       draft_note: z.string().optional(),
     }),
 });

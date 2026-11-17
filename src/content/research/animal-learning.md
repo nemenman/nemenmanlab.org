@@ -9,7 +9,8 @@ teaser: "How do living systems process information and learn, and how is this im
 projects:
   - title: "Neural and computational mechanisms of motor generalization in birdsong"
     detail: "NSF CRCNS 2605848, with S. J. Sober, 2026–2029"
-draft_note: "The description, representative papers, projects, and people on this page are a starting point to discuss. The papers come from the Selected Publications in Ilya's CV, and the projects come from its list of current grants."
+people_note: "No students are working on this direction right now. We are looking for a postdoctoral fellow; see [Join the lab](/join/)."
+draft_note: "The description is still being written. The representative papers come from the Selected Publications in Ilya’s CV."
 ---
 
 *Description to be written together.*

@@ -5,7 +5,7 @@ import Base from '../../layouts/Base.astro';
 import DraftNote from '../../components/DraftNote.astro';
 import PaperItem from '../../components/PaperItem.astro';
 import PersonCard from '../../components/PersonCard.astro';
-import { url } from '../../lib/site';
+import { url, inlineMd } from '../../lib/site';
 
 export async function getStaticPaths() {
   const items = await getCollection('research');
@@ -71,7 +71,9 @@ const ROLE: Record<string, string> = { pi: 'Principal investigator', postdoc: 'P
       <h2 class="font-serif text-3xl">People</h2>
       {members.length > 0
         ? <ul class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{members.map((p) => <PersonCard person={p} role={ROLE[p.data.group]} />)}</ul>
-        : <DraftNote>Which current members work on this direction? To be filled in.</DraftNote>}
+        : d.people_note
+          ? <p class="mt-4 max-w-3xl font-serif text-xl leading-relaxed" set:html={inlineMd(d.people_note)} />
+          : <DraftNote>Which current members work on this direction? To be filled in.</DraftNote>}
     </section>
 
     <nav class="mt-16 flex flex-wrap gap-x-8 gap-y-2 border-t border-rule pt-6 text-sm text-muted" aria-label="Other directions">
