@@ -42,7 +42,7 @@ const photos = (await getCollection('photos')).sort((a, b) => dateKey(b.data.dat
   <section class="mx-auto max-w-6xl px-4 sm:px-6" id="ilya-nemenman">
     <div class="grid gap-8 border-y border-rule py-10 md:grid-cols-12">
       <div class="md:col-span-3">
-        {pi.data.photo && <Image src={pi.data.photo} alt="Ilya Nemenman" widths={[240, 480]} sizes="(min-width: 768px) 240px, 60vw" class="w-48 md:w-full" />}
+        {pi.data.photo && <Image src={pi.data.photo} alt="Ilya Nemenman" widths={[240, 480]} sizes="(min-width: 768px) 240px, 60vw" class="w-48 md:w-full" loading="eager" />}
       </div>
       <div class="md:col-span-9">
         <h2 class="font-serif text-3xl">Ilya Nemenman</h2>
