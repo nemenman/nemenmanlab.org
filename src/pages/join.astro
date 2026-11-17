@@ -17,7 +17,13 @@ import { SITE } from '../lib/site';
     <aside class="md:col-span-4">
       <div class="border border-rule bg-white p-6 md:sticky md:top-6">
         <h2 class="font-serif text-2xl">Open positions</h2>
-        <DraftNote>List current openings here, or say there are none right now. The old site's last postdoc ad dates from 2019.</DraftNote>
+        <div class="mt-4 border-t border-rule pt-4">
+          <p class="smallcaps text-xs text-gold">Postdoctoral</p>
+          <h3 class="mt-1 font-serif text-xl leading-snug">Tarbutton Interdisciplinary Science Fellowship</h3>
+          <p class="mt-2 text-sm leading-relaxed">Emory's endowed fellowships for postdocs whose research bridges physics, biology, chemistry, mathematics, and/or computer science, with a focus on theoretical approaches to living systems. Fellows pursue a semi-independent research program for up to three years, mentored by Emory College faculty. The fellowship covers half of the stipend, and the mentor covers the rest, so please contact me before applying if you would like to work with our group. Applications are accepted throughout the year and awards are made on a rolling basis.</p>
+          <a href="https://livingtheory.emory.edu/programs/tarbutton-fellows.html" class="mt-3 inline-block text-sm font-medium text-navy hover:underline">Details and how to apply (TMLS) →</a>
+        </div>
+        <DraftNote>Any other openings to list (postdoc, graduate)?</DraftNote>
         <h3 class="smallcaps mt-6 text-xs text-gold">Whom to contact</h3>
         <p class="mt-2 text-sm leading-relaxed">Ilya Nemenman, <a class="link" href={`mailto:${SITE.email}`}>{SITE.email}</a>. For postdoctoral positions, please send a CV, a publications list, a brief description of your research experience, and the names of three references.</p>
       </div>
