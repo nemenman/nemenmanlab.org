@@ -26,6 +26,6 @@ const sub = ['phd', 'ms', 'coadvised'].includes(p.group)
     {sub && <p class="mt-0.5 text-sm text-muted">{sub}</p>}
     {p.interests && <p class="mt-1 text-sm text-ink/80">{p.interests}</p>}
     {p.position && <p class="mt-1 text-sm leading-snug text-ink/80"><span class="text-muted">Now: </span>{p.position}</p>}
-    {p.url && <a href={p.url} class="mt-1 inline-block text-sm text-navy hover:underline">Current page →</a>}
+    {p.url && <a href={p.url} class="mt-1 inline-block text-sm text-navy hover:underline">{p.status === 'current' ? 'Web page' : 'Current page'} →</a>}
   </div>
 </li>
