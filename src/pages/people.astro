@@ -4,7 +4,6 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import PersonCard from '../components/PersonCard.astro';
-import DraftNote from '../components/DraftNote.astro';
 import { SITE, url, fmtDate, dateKey, roleRank } from '../lib/site';
 
 const people = await getCollection('people');
@@ -25,7 +24,7 @@ const sections = [
   { key: 'postdoc', title: 'Postdoctoral fellows' },
   { key: 'phd', title: 'PhD students' },
   { key: 'ms', title: 'MS students' },
-  { key: 'coadvised', title: 'Co-advised PhD students' },
+  { key: 'coadvised', title: 'Associate lab members' },
   { key: 'undergrad', title: 'Undergraduate researchers' },
 ].map((s) => ({ ...s, people: alumni.filter((p) => p.data.group === s.key).sort(byRecent) }));
 // Visiting, rotation, summer, and high-school students: names only, no photos.
@@ -52,7 +51,6 @@ const photos = (await getCollection('photos')).sort((a, b) => dateKey(b.data.dat
           <p>Ilya Nemenman is the Samuel Candler Dobbs Professor of Physics and Biology at Emory University, where he has been on the faculty since 2009 and directs the Initiative in Theory and Modeling of Living Systems. He received his PhD in physics from Princeton University in 2000, working with William Bialek. Before moving to Emory, he was a postdoctoral scientist at the NEC Research Institute and the Kavli Institute for Theoretical Physics, an associate research scientist at Columbia University, and a technical staff member at Los Alamos National Laboratory.</p>
           <p>He is a Fellow of the American Physical Society and of the American Association for the Advancement of Science, a Simons Investigator in Theoretical Physics in Life Sciences, and a co-recipient of the 2025 Cozzarelli Prize of the National Academy of Sciences.</p>
         </div>
-        <DraftNote>Bio drafted from the CV. Wording to approve.</DraftNote>
         <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
           <a class="link" href={url('/Nemenman_CV.pdf')}>CV (PDF)</a>
           <a class="link" href={SITE.scholar}>Google Scholar</a>

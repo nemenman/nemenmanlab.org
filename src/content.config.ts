@@ -9,6 +9,7 @@ const people = defineCollection({
     z.object({
       name: z.string(),
       status: z.enum(['pi', 'current', 'alumni']),
+      // 'coadvised' is shown as "Associate lab members"
       group: z.enum(['pi', 'postdoc', 'phd', 'ms', 'coadvised', 'undergrad', 'visiting', 'rotation', 'summer', 'highschool']),
       years: z.string().optional(),
       degree: z.string().optional(),
