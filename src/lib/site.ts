@@ -57,3 +57,10 @@ export function inlineMd(s: string): string {
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/(^|[\s(“"'])[_*]([^_*]+)[_*](?=[\s).,;:!?”"']|$)/g, '$1<em>$2</em>');
 }
+
+/** Display order for people everywhere on the site: postdocs, PhD students, then undergraduates. */
+export const ROLE_ORDER = ['pi', 'postdoc', 'phd', 'ms', 'coadvised', 'undergrad', 'visiting', 'rotation', 'summer', 'highschool'];
+export const roleRank = (group: string) => {
+  const i = ROLE_ORDER.indexOf(group);
+  return i < 0 ? ROLE_ORDER.length : i;
+};

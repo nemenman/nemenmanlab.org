@@ -5,7 +5,7 @@ import Base from '../../layouts/Base.astro';
 import DraftNote from '../../components/DraftNote.astro';
 import PaperItem from '../../components/PaperItem.astro';
 import PersonCard from '../../components/PersonCard.astro';
-import { url, inlineMd } from '../../lib/site';
+import { url, inlineMd, roleRank } from '../../lib/site';
 
 export async function getStaticPaths() {
   const items = await getCollection('research');
@@ -23,7 +23,7 @@ const members = (d.people ?? []).map((slug) => {
   const p = everyone.find((x) => x.id === slug);
   if (!p) throw new Error(`research/${entry.id}: unknown person "${slug}"`);
   return p;
-});
+}).sort((a, b) => roleRank(a.data.group) - roleRank(b.data.group)); // postdocs, PhD students, undergrads
 const ROLE: Record<string, string> = { pi: 'Principal investigator', postdoc: 'Postdoctoral fellow', phd: 'PhD student', ms: 'MS student', undergrad: 'Undergraduate researcher' };
 ---
 <Base title={d.title} description={d.questions.join(' ')}>

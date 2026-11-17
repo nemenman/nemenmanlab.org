@@ -5,7 +5,7 @@ import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import PersonCard from '../components/PersonCard.astro';
 import DraftNote from '../components/DraftNote.astro';
-import { SITE, url, fmtDate, dateKey } from '../lib/site';
+import { SITE, url, fmtDate, dateKey, roleRank } from '../lib/site';
 
 const people = await getCollection('people');
 const pi = people.find((p) => p.data.status === 'pi')!;
@@ -19,7 +19,7 @@ const byRecent = (a: (typeof people)[number], b: (typeof people)[number]) => las
 
 const ROLE: Record<string, string> = { postdoc: 'Postdoctoral fellow', phd: 'PhD student', ms: 'MS student', undergrad: 'Undergraduate researcher' };
 const current = people.filter((p) => p.data.status === 'current')
-  .sort((a, b) => ['postdoc', 'phd', 'ms', 'undergrad'].indexOf(a.data.group) - ['postdoc', 'phd', 'ms', 'undergrad'].indexOf(b.data.group) || bySurname(a, b));
+  .sort((a, b) => roleRank(a.data.group) - roleRank(b.data.group) || bySurname(a, b)); // postdocs, PhD students, undergrads
 const alumni = people.filter((p) => p.data.status === 'alumni');
 const sections = [
   { key: 'postdoc', title: 'Postdoctoral fellows' },
