@@ -11,7 +11,12 @@ projects:
     detail: "DOE Genesis Mission, with J. C. Burton, 2026–2027"
   - title: "Bridging the gap between particle-based and continuum hydrodynamic descriptions of dusty plasma"
     detail: "NSF PHY 2409416, with J. C. Burton, 2024–2027"
-draft_note: "The description, representative papers, projects, and people on this page are a starting point to discuss. The papers come from the Selected Publications in Ilya's CV, and the projects come from its list of current grants."
+  - title: "Simons Investigator in Theoretical Physics in Life Sciences"
+    detail: "Simons Foundation, 2021–2031"
+people:
+  - "paarth-gulati"
+  - "marco-li"
+draft_note: "The description is still being written. The representative papers come from the Selected Publications in Ilya’s CV."
 ---
 
 *Description to be written together.*

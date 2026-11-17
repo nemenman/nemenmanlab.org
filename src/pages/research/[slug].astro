@@ -4,6 +4,7 @@ import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import DraftNote from '../../components/DraftNote.astro';
 import PaperItem from '../../components/PaperItem.astro';
+import PersonCard from '../../components/PersonCard.astro';
 import { url } from '../../lib/site';
 
 export async function getStaticPaths() {
@@ -17,6 +18,13 @@ const papers = (await getCollection('papers'))
   .sort((a, b) => b.data.year - a.data.year);
 const all = (await getCollection('research')).sort((a, b) => a.data.order - b.data.order);
 const d = entry.data;
+const everyone = await getCollection('people');
+const members = (d.people ?? []).map((slug) => {
+  const p = everyone.find((x) => x.id === slug);
+  if (!p) throw new Error(`research/${entry.id}: unknown person "${slug}"`);
+  return p;
+});
+const ROLE: Record<string, string> = { pi: 'Principal investigator', postdoc: 'Postdoctoral fellow', phd: 'PhD student', ms: 'MS student', undergrad: 'Undergraduate researcher' };
 ---
 <Base title={d.title} description={d.questions.join(' ')}>
   <article class="mx-auto max-w-6xl px-4 pt-12 sm:px-6 md:pt-16">
@@ -39,7 +47,7 @@ const d = entry.data;
 
     {d.projects && d.projects.length > 0 && (
       <section class="mt-14">
-        <h2 class="font-serif text-3xl">Current projects</h2>
+        <h2 class="font-serif text-3xl">Current projects and funding</h2>
         <ul class="mt-5 divide-y divide-rule border-y border-rule">
           {d.projects.map((p) => (
             <li class="py-4">
@@ -61,7 +69,9 @@ const d = entry.data;
 
     <section class="mt-14">
       <h2 class="font-serif text-3xl">People</h2>
-      <DraftNote>Which current members work on this direction? To be filled in.</DraftNote>
+      {members.length > 0
+        ? <ul class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{members.map((p) => <PersonCard person={p} role={ROLE[p.data.group]} />)}</ul>
+        : <DraftNote>Which current members work on this direction? To be filled in.</DraftNote>}
     </section>
 
     <nav class="mt-16 flex flex-wrap gap-x-8 gap-y-2 border-t border-rule pt-6 text-sm text-muted" aria-label="Other directions">
