@@ -11,7 +11,7 @@ projects:
     detail: "NSF CRCNS 2605848, with S. J. Sober, 2026–2029"
   - title: "Simons Investigator in Theoretical Physics in Life Sciences"
     detail: "Simons Foundation, 2021–2031"
-people_note: "No students are working on this direction right now. We are looking for a postdoctoral fellow; see [Join the lab](/join/)."
+people_note: "No current lab members work on this direction. We are looking for a postdoctoral fellow; see [Join the lab](/join/)."
 ---
 
 We build quantitative theories of how animals learn and of how their brains implement this learning. We work closely with experimental groups, among them Sam Sober's lab at Emory, which studies birdsong, and Will Ryu's lab, which studies the worm *C. elegans*.
