@@ -1,0 +1,79 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 22 23:37:35 2016
+
+@author: nemenman
+"""
+
+import numpy as np
+import numpy.random as nprnd
+import matplotlib.pyplot as plt
+
+# simple linear congruent random number generator
+seed = 10
+multiplier = 7**5
+modulus = 2**31-1
+increment = 0
+
+n_rands = 10000
+
+rand_flt = np.zeros(n_rands)
+rand_flt[0] = seed           # seed
+
+for i in np.arange(1, n_rands):
+    rand_flt[i] = np.mod(rand_flt[i-1] * multiplier + increment, modulus)
+
+rand_flt = rand_flt / modulus
+
+# showing the resulting histogram of random numbers
+plt.hist(rand_flt, 100)
+plt.show()
+
+
+# generating integer randoms 1...4
+rand4 = np.floor(nprnd.random(1000)*4)
+plt.hist(rand4)
+plt.show()
+
+# generating exponential random numbers using built-in function
+plt.hist(nprnd.exponential(size=n_rands), 30)
+plt.show()
+# and comparing built-in to our own generator
+plt.hist([nprnd.exponential(size=n_rands), -np.log(nprnd.random(10000))], 30)
+plt.show()
+
+# different (some wrong) attempts to generate a random number in a circle
+x = 2*nprnd.random(int(1e3)) - 1
+y = 2*nprnd.random(int(1e3)) - 1
+r = np.sqrt(x**2+y**2)
+# the line below -- we should check that r>0, but we don't now
+scale = nprnd.random(int(1e3))
+x = x/r*scale
+y = y/r*scale
+plt.plot(x, y, 'o')
+plt.show()
+
+r = nprnd.random(int(1e3))
+phi = 2*np.pi*nprnd.random(int(1e3))
+x = r*np.cos(phi)
+y = r*np.sin(phi)
+plt.plot(x, y, 'o')
+plt.show()
+
+r2 = nprnd.random(int(1e3))
+phi = 2*np.pi*nprnd.random(int(1e3))
+x = np.sqrt(r2)*np.cos(phi)
+y = np.sqrt(r2)*np.sin(phi)
+plt.plot(x, y, 'o')
+plt.show()
+
+
+# generating gaussian random numbers using built-in function
+plt.hist(nprnd.randn(n_rands), 30)
+plt.show()
+# and comparing built-in to our own generator
+phi = 2 * np.pi * nprnd.random(n_rands)
+r = np.sqrt(2 * nprnd.exponential(size=n_rands))
+rand_norm = r * np.cos(phi)
+plt.hist([nprnd.randn(n_rands), rand_norm], 30)
+plt.show()

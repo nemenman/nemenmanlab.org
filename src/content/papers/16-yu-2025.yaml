@@ -1,0 +1,10 @@
+n: 16
+authors: "W Yu, _E Abdelaleem_, I Nemenman, and JC Burton"
+title: "Physics-tailored machine learning reveals unexpected physics in dusty plasmas"
+journal: "Proc Natl Acad Sci (USA)"
+citation: "122 (31) e2505725122, 2025"
+year: 2025
+summary: "Machine learning constrained by physical symmetries infers interparticle forces in dusty plasmas, discovering unexpected physics of particle charging and interactions in this many-body system."
+doi: "10.1073/pnas.2505725122"
+award: "2025 Cozzarelli Prize, NAS"
+directions: ["ai-physics"]  # draft mapping to research pages

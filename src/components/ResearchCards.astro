@@ -1,0 +1,33 @@
+---
+// Three research directions. Phones: compact rows with a small square thumbnail.
+// md and up: three columns with 4:3 figures, separated by rules (mockup A).
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { url } from '../lib/site';
+
+const items = (await getCollection('research')).sort((a, b) => a.data.order - b.data.order);
+---
+<div class="grid gap-0 divide-y divide-rule border-y border-rule md:grid-cols-3 md:gap-0 md:divide-x md:divide-y-0 md:border-0">
+  {items.map((r, i) => (
+    <article class:list={['group py-5 md:py-0', i === 0 ? 'md:pr-8' : i === items.length - 1 ? 'md:pl-8' : 'md:px-8']}>
+      <a href={url(`/research/${r.id}/`)} class="grid grid-cols-[5.5rem_1fr] items-start gap-4 sm:grid-cols-[7rem_1fr] md:block">
+        <div class="md:hidden">
+          <p class="smallcaps text-xs text-gold">0{i + 1}</p>
+          <div class="mt-1 aspect-square overflow-hidden border border-rule bg-white">
+            <Image src={r.data.image} alt={r.data.imageAlt} widths={[176, 224]} sizes="(min-width: 640px) 7rem, 5.5rem" class="h-full w-full object-contain p-1.5" />
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <p class="smallcaps text-xs text-gold">0{i + 1}</p>
+          <div class="mt-3 aspect-[4/3] overflow-hidden border border-rule bg-white">
+            <Image src={r.data.image} alt={r.data.imageAlt} widths={[400, 640]} sizes="(min-width: 1152px) 330px, 30vw" class="h-full w-full object-contain p-4 transition duration-500 group-hover:scale-[1.03]" />
+          </div>
+        </div>
+        <div class="md:mt-5">
+          <h3 class="font-serif text-xl leading-tight group-hover:text-navy md:text-2xl">{r.data.title}</h3>
+          <p class="mt-2 font-serif text-base italic leading-snug text-ink/75 md:mt-3 md:text-lg">{r.data.teaser}</p>
+        </div>
+      </a>
+    </article>
+  ))}
+</div>

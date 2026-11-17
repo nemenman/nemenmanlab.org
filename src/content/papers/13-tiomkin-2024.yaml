@@ -1,0 +1,9 @@
+n: 13
+authors: "S Tiomkin, I Nemenman, D Polani, and N Tishby"
+title: "Intrinsic motivation in dynamical control systems"
+journal: "PRX Life"
+citation: "2, 033009, 2024"
+year: 2024
+summary: "Agents that maximize their control over their own future generate purposeful behavior with no externally supplied reward."
+doi: "10.1103/PRXLife.2.033009"
+directions: ["ai-physics", "animal-learning"]  # draft mapping to research pages

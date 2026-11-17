@@ -1,0 +1,120 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PersonCard from '../components/PersonCard.astro';
+import DraftNote from '../components/DraftNote.astro';
+import { SITE, url, fmtDate, dateKey } from '../lib/site';
+
+const people = await getCollection('people');
+const pi = people.find((p) => p.data.status === 'pi')!;
+const lastYear = (p: (typeof people)[number]) => {
+  const ys = `${p.data.years ?? ''} ${p.data.degree ?? ''}`.match(/\d{4}/g);
+  return ys ? Math.max(...ys.map(Number)) : 0;
+};
+const bySurname = (a: (typeof people)[number], b: (typeof people)[number]) =>
+  a.data.name.split(' ').at(-1)!.localeCompare(b.data.name.split(' ').at(-1)!);
+const byRecent = (a: (typeof people)[number], b: (typeof people)[number]) => lastYear(b) - lastYear(a) || bySurname(a, b);
+
+const ROLE: Record<string, string> = { postdoc: 'Postdoctoral fellow', phd: 'PhD student', ms: 'MS student', undergrad: 'Undergraduate researcher' };
+const current = people.filter((p) => p.data.status === 'current')
+  .sort((a, b) => ['postdoc', 'phd', 'ms', 'undergrad'].indexOf(a.data.group) - ['postdoc', 'phd', 'ms', 'undergrad'].indexOf(b.data.group) || bySurname(a, b));
+const alumni = people.filter((p) => p.data.status === 'alumni');
+const sections = [
+  { key: 'postdoc', title: 'Postdoctoral fellows' },
+  { key: 'phd', title: 'PhD students' },
+  { key: 'ms', title: 'MS students' },
+  { key: 'coadvised', title: 'Co-advised PhD students' },
+  { key: 'undergrad', title: 'Undergraduate researchers' },
+].map((s) => ({ ...s, people: alumni.filter((p) => p.data.group === s.key).sort(byRecent) }));
+// Visiting, rotation, summer, and high-school students: names only, no photos.
+const lists = [
+  { key: ['visiting', 'rotation'], title: 'Visiting and rotation graduate students' },
+  { key: ['summer'], title: 'Summer students' },
+  { key: ['highschool'], title: 'High-school students' },
+].map((s) => ({ ...s, people: alumni.filter((p) => s.key.includes(p.data.group)).sort(byRecent) }));
+const photos = (await getCollection('photos')).sort((a, b) => dateKey(b.data.date).localeCompare(dateKey(a.data.date)));
+---
+<Base title="People" description="Members and alumni of the Nemenman group at Emory University, and group photos over the years.">
+  <PageHeader title="People" kicker="The group, past and present" />
+
+  <!-- PI -->
+  <section class="mx-auto max-w-6xl px-4 sm:px-6" id="ilya-nemenman">
+    <div class="grid gap-8 border-y border-rule py-10 md:grid-cols-12">
+      <div class="md:col-span-3">
+        {pi.data.photo && <Image src={pi.data.photo} alt="Ilya Nemenman" widths={[240, 480]} sizes="(min-width: 768px) 240px, 60vw" class="w-48 md:w-full" />}
+      </div>
+      <div class="md:col-span-9">
+        <h2 class="font-serif text-3xl">Ilya Nemenman</h2>
+        <p class="mt-1 text-muted">{pi.data.position}</p>
+        <div class="mt-5 max-w-3xl space-y-4 font-serif text-lg leading-relaxed">
+          <p>Ilya Nemenman is the Samuel Candler Dobbs Professor of Physics and Biology at Emory University, where he has been on the faculty since 2009 and directs the Initiative in Theory and Modeling of Living Systems. He received his PhD in physics from Princeton University in 2000, working with William Bialek. Before moving to Emory, he was a postdoctoral scientist at the NEC Research Institute and the Kavli Institute for Theoretical Physics, an associate research scientist at Columbia University, and a technical staff member at Los Alamos National Laboratory.</p>
+          <p>He is a Fellow of the American Physical Society and of the American Association for the Advancement of Science, a Simons Investigator in Theoretical Physics in Life Sciences, and a co-recipient of the 2025 Cozzarelli Prize of the National Academy of Sciences.</p>
+        </div>
+        <DraftNote>Bio drafted from the CV. Wording to approve.</DraftNote>
+        <p class="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <a class="link" href={url('/Nemenman_CV.pdf')}>CV (PDF)</a>
+          <a class="link" href={SITE.scholar}>Google Scholar</a>
+          <a class="link" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          <a class="link" href={SITE.x}>X</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current members -->
+  <section class="mx-auto max-w-6xl px-4 pt-14 sm:px-6" id="current">
+    <h2 class="font-serif text-3xl">Current members</h2>
+    <ul class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {current.map((p) => <PersonCard person={p} role={ROLE[p.data.group]} />)}
+    </ul>
+  </section>
+
+  <!-- Alumni -->
+  <section class="mx-auto max-w-6xl px-4 pt-16 sm:px-6" id="alumni">
+    <h2 class="font-serif text-3xl">Alumni</h2>
+    <p class="mt-2 text-muted">Photos are from the years in the lab. Links go to each person's current page.</p>
+    {sections.filter((s) => s.people.length).map((s) => (
+      <div class="mt-10">
+        <h3 class="smallcaps border-b border-rule pb-2 text-sm text-gold">{s.title}</h3>
+        <ul class="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {s.people.map((p) => <PersonCard person={p} />)}
+        </ul>
+      </div>
+    ))}
+    <div class="mt-12 grid gap-10 md:grid-cols-3">
+      {lists.filter((s) => s.people.length).map((s) => (
+        <div>
+          <h3 class="smallcaps border-b border-rule pb-2 text-sm text-gold">{s.title}</h3>
+          <ul class="mt-4 space-y-2 text-sm">
+            {s.people.map((p) => (
+              <li id={p.id}>
+                {p.data.url ? <a href={p.data.url} class="link font-medium text-ink">{p.data.name}</a> : <span class="font-medium">{p.data.name}</span>}
+                {p.data.years && <span class="text-muted">, {p.data.years}</span>}
+                {p.data.position && <span class="block text-muted">{p.data.position}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Group photos -->
+  <section class="mx-auto max-w-6xl px-4 pt-16 sm:px-6" id="group-photos">
+    <h2 class="font-serif text-3xl">Group photos</h2>
+    <div class="mt-8 grid gap-x-8 gap-y-12 md:grid-cols-2">
+      {photos.map((ph) => (
+        <figure>
+          <Image src={ph.data.image} alt={`The Nemenman group, ${fmtDate(ph.data.date, 'long')}`} widths={[480, 800, 1100]} sizes="(min-width: 768px) 540px, 100vw" class="aspect-[3/2] w-full object-cover" />
+          <figcaption class="mt-3 text-sm leading-relaxed text-muted">
+            <span class="font-serif text-lg text-ink">{fmtDate(ph.data.date, 'long')}</span>
+            {ph.data.title && <span class="text-ink"> · {ph.data.title}</span>}
+            <span class="block">{ph.data.caption.replace(/^[A-Z][a-z]+ \d{4}[.,]\s*/, '').replace(ph.data.title ? new RegExp(`^${ph.data.title}\\.\\s*`) : /^$/, '')}</span>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </section>
+</Base>

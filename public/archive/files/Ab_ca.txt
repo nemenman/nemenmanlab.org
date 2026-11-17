@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Apr  3 09:38:33 2017
+
+@author: ilya
+"""
+
+
+import numpy as np
+import numpy.random as nprnd
+import matplotlib.pyplot as plt
+from scipy.integrate import odeint
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
+
+N_events = 100
+N_trials = 10
+a = 10.0
+r = 1.0
+
+N_part = np.zeros((N_events, N_trials))
+t_events = np.zeros((N_events, N_trials))
+
+for j in range(N_trials):
+    for i in range(1, N_events):
+        prop_birth = a
+        prop_death = N_part[i-1, j]*r
+        prop_tot = prop_birth + prop_death
+        prob_birth = prop_birth / prop_tot
+        which_event = (nprnd.random(1) < prob_birth)
+        if which_event:
+            N_part[i, j] = N_part[i-1, j] + 1
+        else:
+            N_part[i, j] = N_part[i-1, j] - 1
+
+        t_events[i, j] = t_events[i-1, j] + nprnd.exponential(1)*(1/prop_tot)
+
+plt.plot(t_events, N_part, '-')
+plt.show()
+
+
+def dpdt(p, t, a, r):
+    dpdt = 0*p
+    maxn = p.size
+    n = np.arange(maxn)
+    dpdt[1:maxn] = a*p[0:maxn-1]
+    dpdt[0:maxn-1] = dpdt[0:maxn-1] + r*n[1:maxn]*p[1:maxn]
+    dpdt = dpdt - a*p
+    dpdt = dpdt - r*n*p
+    return dpdt
+
+maxn = 20
+p = np.zeros(maxn)
+p[0] = 1
+ 
+t = np.arange(10)
+n = np.arange(maxn)
+pp = odeint(dpdt, p, t, args=(a, r))
+T, N = np.meshgrid(t, n)
+ax = Axes3D(plt.figure())
+ax.plot_surface(T, N, np.transpose(pp),cmap=cm.coolwarm)
+plt.show()

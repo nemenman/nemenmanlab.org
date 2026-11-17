@@ -1,0 +1,9 @@
+n: 11
+authors: "_A Sederberg_ and I Nemenman"
+title: "Randomly connected networks generate emergent selectivity and predict decoding properties of large populations of neurons"
+journal: "PLoS Comput Biol"
+citation: "16, e1007875, 2020"
+year: 2020
+summary: "Randomly connected networks reproduce the emergent selectivity and population decoding properties usually attributed to structured wiring, so reported experiments cannot distinguish the two."
+doi: "10.1371/journal.pcbi.1007875"
+directions: ["animal-learning"]  # draft mapping to research pages

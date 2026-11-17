@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Jan 29 09:44:51 2018
+
+@author: ilya
+"""
+
+import numpy as np
+
+a = 1.0
+b = 2.0
+c = -2.0
+
+sD = np.sqrt(b**2-4*a*c)
+x1 = (-b+sD)/(2*a)
+x2 = (-b-sD)/(2*a)
+
+print(x1)
+print(x2)

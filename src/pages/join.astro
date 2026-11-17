@@ -1,0 +1,54 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import DraftNote from '../components/DraftNote.astro';
+import { SITE } from '../lib/site';
+---
+<Base title="Join the Lab" description="Open positions and guidance for prospective undergraduate, graduate, and postdoctoral members of the Nemenman group.">
+  <PageHeader
+    title="Join the lab"
+    kicker="Students and postdocs"
+    lede="We are always looking for new members. If interested, reach out to Ilya Nemenman at the email below."
+  >
+    <a href={`mailto:${SITE.email}`} class="mt-6 inline-block rounded-sm bg-navy px-5 py-2.5 text-sm font-medium text-white hover:bg-navy/90">{SITE.email}</a>
+  </PageHeader>
+
+  <div class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-12">
+    <aside class="md:col-span-4">
+      <div class="border border-rule bg-white p-6 md:sticky md:top-6">
+        <h2 class="font-serif text-2xl">Open positions</h2>
+        <DraftNote>List current openings here, or say there are none right now. The old site's last postdoc ad dates from 2019.</DraftNote>
+        <h3 class="smallcaps mt-6 text-xs text-gold">Whom to contact</h3>
+        <p class="mt-2 text-sm leading-relaxed">Ilya Nemenman, <a class="link" href={`mailto:${SITE.email}`}>{SITE.email}</a>. For postdoctoral positions, please send a CV, a publications list, a brief description of your research experience, and the names of three references.</p>
+      </div>
+    </aside>
+
+    <div class="prose-lab md:col-span-8">
+      <h2>Emory undergraduates</h2>
+      <p><strong>I am an Emory undergraduate interested in working with you. Do you have a project I could work on?</strong></p>
+      <p>Thank you for your interest! I typically host one, at most two undergraduate students in my lab at any time. Write me an email, and I will let you know if a space is available. In your email, make sure to tell me the following:</p>
+      <ul>
+        <li>What subjects are you interested in?</li>
+        <li>What computer languages are you most comfortable with? (Note that I cannot take undergraduate students who don't program, or are unwilling to commit to learn to program quickly).</li>
+        <li>What research have you done previously and has any of it been published?</li>
+        <li>How many hours per week do you expect to work, and for how many months? Note, that I don't take students who are not willing to commit to at least a year working with me.</li>
+        <li>Are you interested in research credits? Getting paid? Or are you volunteering?</li>
+      </ul>
+      <p>If I can take a student at this time, I will provide you with some test problem to solve on a computer, in a language of your choice. If you do it well, you and I will meet to discuss expectations and possible projects, and you will be able to join the group if we reach an agreement.</p>
+
+      <h2>Undergraduates at another university</h2>
+      <p><strong>I am an undergraduate at university X. Will you host me for a research project over the summer?</strong></p>
+      <p>Thanks for your interest! I get many emails such as yours, and I cannot make time commitments to students I've never met or worked with. I only take summer undergraduate researchers if they apply through and are selected to be a part of the Emory <a href="https://college.emory.edu/undergraduate-research/summer-programs/sure.html">SURE</a> program.</p>
+      <p><strong>I am an undergraduate at university X. I am interested in doing graduate studies in your group. Can I join your group?</strong></p>
+      <p>Thank you for your interest! I usually take one graduate student per year, combined, from all graduate programs I am a member of. However, at Emory, students don’t apply to work directly with a certain faculty member, but rather they apply to a graduate program. If a student is admitted, and passes all of the required classes and exams, he or she can then join a research group in a year or two after starting within the graduate program. Thus I encourage you to apply to Emory graduate programs, but usually I cannot answer questions if I would accept a particular student into my group until I have worked with the student for a few months, and have a better understanding of the student's interests, capabilities, and fit for my group. Also, if the student is not funded by a fellowship, I need to know if I have funds to support the student for a few years, which won't be known until about a year or two after the student joins our programs.</p>
+      <p>I take students from the following graduate programs:</p>
+      <ul>
+        <li><a href="https://physics.emory.edu/grad/index.html">Physics</a></li>
+        <li><a href="https://biomed.emory.edu/PROGRAM_SITES/NS/">Neuroscience</a></li>
+        <li><a href="https://biomed.emory.edu/PROGRAM_SITES/PBEE/">Population Biology, Ecology, and Evolution</a></li>
+      </ul>
+      <p>Different programs have different admission requirements, and you should explore the relevant sections of the above web sites.</p>
+      <DraftNote>This guidance is the 2014 FAQ from the old site, nearly verbatim. Only the links were updated, and "i" was capitalized. Please check that the numbers (undergraduates hosted, graduate students per year) and the program list are still right.</DraftNote>
+    </div>
+  </div>
+</Base>

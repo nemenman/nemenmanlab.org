@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 28 08:44:09 2016
+
+@author: nemenman
+"""
+
+import numpy as np
+import numpy.random as nprnd
+import matplotlib.pyplot as plt
+
+# random increments
+x = 2*(nprnd.random(100) > 0.5) - 1
+y = 2*(nprnd.random(100) > 0.5) - 1
+
+# corresponding current coordinates
+cumX = np.cumsum(x)
+cumY = np.cumsum(y)
+
+plt.plot(cumX, cumY, 'b-o')
+plt.show()
+
+
+# comparing different ways of generating random walks
+# random increments
+x = 2*(nprnd.random(10000) > 0.5) - 1
+y = 2*(nprnd.random(10000) > 0.5) - 1
+xr = 2*(2*nprnd.random(10000) - 1)
+yr = 2*(2*nprnd.random(10000) - 1)
+
+# corresponding current coordinates
+cumX = np.cumsum(x)
+cumY = np.cumsum(y)
+cumXr = np.cumsum(xr)
+cumYr = np.cumsum(yr)
+
+
+plt.plot(cumX, cumY, 'b-')
+plt.plot(cumXr, cumYr, 'r-')
+plt.show()
+
+# showing the mean square proportional to time law
+# note how we "vectorize" all computations, and avoid loops
+n_trials = 10000
+trial_length = 10000
+xx = 2*(nprnd.random((trial_length, n_trials)) > 0.5) - 1
+yy = 2*(nprnd.random((trial_length, n_trials)) > 0.5) - 1
+cumXX = np.cumsum(xx, 0)
+cumYY = np.cumsum(yy, 0)
+
+meanX = np.mean(cumXX, 1)
+meanY = np.mean(cumYY, 1)
+meanR2 = np.mean(cumXX**2 + cumYY**2, 1)
+
+plt.plot(meanX, 'b')
+plt.plot(meanY, 'r')
+plt.xlabel('time')
+plt.ylabel('displacement')
+plt.show()
+
+plt.plot(meanR2, 'g')
+plt.xlabel('time')
+plt.ylabel('distance squared')
+plt.show()
+
+plt.hist(cumXX[-1,:],30)

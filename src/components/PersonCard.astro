@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props { person: CollectionEntry<'people'>; role?: string }
+const { person, role } = Astro.props;
+const p = person.data;
+const initials = p.name.replace(/\(.*?\)/g, '').split(/\s+/).filter(Boolean).map((w) => w[0]).filter((c) => /[A-ZÀ-Ž]/.test(c)).slice(0, 2).join('');
+const sub = [p.years, p.degree && !p.years?.includes(p.degree) ? p.degree : null].filter(Boolean).join(' · ');
+---
+<li class="flex gap-4" id={person.id}>
+  <div class="aspect-[4/5] w-20 shrink-0 overflow-hidden bg-rule/60 sm:w-24">
+    {p.photo
+      ? <Image src={p.photo} alt={p.name} widths={[96, 192]} sizes="6rem" class="h-full w-full object-cover" />
+      : <div class="grid h-full w-full place-items-center font-serif text-2xl text-muted/70" aria-hidden="true">{initials}</div>}
+  </div>
+  <div class="min-w-0 pt-0.5">
+    <p class="font-serif text-lg leading-tight">{p.url ? <a href={p.url} class="hover:text-navy">{p.name}</a> : p.name}</p>
+    {role && <p class="mt-0.5 text-sm text-muted">{role}</p>}
+    {sub && <p class="mt-0.5 text-sm text-muted">{sub}</p>}
+    {p.interests && <p class="mt-1 text-sm text-ink/80">{p.interests}</p>}
+    {p.position && <p class="mt-1 text-sm leading-snug text-ink/80"><span class="text-muted">Now: </span>{p.position}</p>}
+    {p.url && <a href={p.url} class="mt-1 inline-block text-sm text-navy hover:underline">Current page →</a>}
+  </div>
+</li>

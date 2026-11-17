@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jan 30 07:38:00 2019
+
+@author: nemenman
+"""
+
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Feb  3 08:00:09 2016
+
+@author: nemenman
+"""
+import numpy as np
+
+#first let's check if vector arithmetic is faster than non-vector one
+#and also check on how arrays work
+L = 10000000
+a = np.arange(L)
+aa = a
+a[1] = 2
+ 
+c = np.arange(L)
+for i in np.arange(L):
+#    b[i] = a[i]
+    c[i] = a[i]
+
+d = np.copy(a)
+
+dx = 1.0
+x0 = 7
+Tolerance = 1e-5
+x = x0
+while(np.abs(dx) > Tolerance):
+    F = x**3 + 5    
+    G = 3*x**2
+    dx = -F/G
+    x = x+dx
+    print(x)
+    
+
+p1 = 0 # position of three fixed charges
+p2 = 10 
+p3 = 12
+q1 = 1.0 # values of three charges
+q2 = 2.0
+q3 = 0.5
+x0 = 7 # initial condition
+Tolerance = 1e-5 # tolerance for change before terminationx = x0 #initial value for starting the loop
+dx = 1.0 # fake "last change in x"
+while(np.abs(dx) > Tolerance):
+    F = q1*(x-p2)**2*(x-p3)**2 - q2*(x-p1)**2*(x-p3)**2 - q2*(x-p2)**2*(x-p1)**2
+    G = 2*q1*(x-p2)*(x-p3)**2 + 2*q1*(x-p2)**2*(x-p3) - 2*q2*(x-p1)*(x-p3)**2  - 2*q2*(x-p1)**2*(x-p3) - 2*q3*(x-p2)*(x-p1)**2 - 2*q3*(x-p2)**2*(x-p1)
+    dx = -F/G
+    x = x+dx
+    print(x)
+    
+print("The zero of the function is ", x, ".", sep="")

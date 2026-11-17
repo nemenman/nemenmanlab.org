@@ -1,0 +1,9 @@
+n: 12
+authors: "_A Roman_, K Palanski, I Nemenman, and WS Ryu"
+title: "A dynamical model of C. elegans thermal preference reveals independent excitatory and inhibitory learning pathways"
+journal: "Proc Natl Acad Sci (USA)"
+citation: "120 (13), e2215191120, 2023"
+year: 2023
+summary: "Quantitative modeling of operant conditioning in worms reveals separate food-associated and food-independent learning pathways, confirmed experimentally."
+doi: "10.1073/pnas.2215191120"
+directions: ["animal-learning"]  # draft mapping to research pages

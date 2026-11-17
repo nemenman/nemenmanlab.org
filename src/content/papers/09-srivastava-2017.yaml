@@ -1,0 +1,9 @@
+n: 9
+authors: "K Srivastava, _C Holmes_, M Vellema, A Pack, C Elemans, I Nemenman, and S Sober"
+title: "Motor control by precisely timed spike patterns"
+journal: "Proc Natl Acad Sci (USA)"
+citation: "114, 1171, 2017"
+year: 2017
+summary: "Precisely timed spike patterns in vocal muscles causally control behavior at millisecond resolution, overturning decades of work holding that firing rate alone carries motor commands."
+doi: "10.1073/pnas.1611734114"
+directions: ["animal-learning"]  # draft mapping to research pages

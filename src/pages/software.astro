@@ -1,0 +1,43 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { SITE } from '../lib/site';
+
+// From the CV's "Software" list and the lab's GitHub organization (checked 2026-11-17).
+const tools = [
+  { name: 'NSB entropy estimator', what: 'Bayesian estimation of entropy from severely undersampled discrete data.', url: 'https://nsb-entropy.sourceforge.net/' },
+  { name: 'Sir Isaac', what: 'Automated inference of phenomenological dynamical models from data.', url: 'https://github.com/EmoryUniversityTheoreticalBiophysics/SirIsaac' },
+  { name: 'Mutual information for continuous variables', what: 'The Holmes–Nemenman modified KSG estimator of mutual information.', url: 'https://github.com/EmoryUniversityTheoreticalBiophysics/ContinuousMIEstimation' },
+  { name: 'NB-QFT-learning', what: 'Quantum field theory based, model-independent learning of continuous distributions.', url: 'https://github.com/EmoryUniversityTheoreticalBiophysics/NB-QFT-learning' },
+  { name: 'uBIA', what: 'Unsupervised Bayesian Ising Approximation.', url: 'https://github.com/dghernandez/decomotor' },
+  { name: 'DVSIB', what: 'Deep Variational Symmetric Information Bottleneck.', url: 'https://github.com/KMichaelMartini/DVMIB' },
+  { name: 'DySIB', what: 'Dynamic Symmetric Information Bottleneck.', url: 'https://github.com/paarthgulati/DYSIB_Pendulum' },
+  { name: 'dim_est', what: 'Dimensionality estimation with machine-learning-based mutual information estimators.', url: 'https://github.com/paarthgulati/dim_est' },
+];
+const code = [
+  { name: 'C. elegans', what: 'Analyzing and modeling C. elegans sensorimotor dynamics.', url: 'https://github.com/EmoryUniversityTheoreticalBiophysics/C.-elegans' },
+  { name: 'NonGaussianLearning', what: 'Code and data for “Chance, long tails, and inference in a non-Gaussian, Bayesian theory of vocal learning in songbirds” (PNAS 2018).', url: 'https://github.com/EmoryUniversityTheoreticalBiophysics/NonGaussianLearning' },
+  { name: 'BacterialPopulationDynamics', what: 'Models of bacterial populations, including colony growth and interaction with the immune system.', url: 'https://github.com/EmoryUniversityTheoreticalBiophysics/BacterialPopulationDynamics' },
+];
+---
+<Base title="Software & Data" description="Software and code released by the Nemenman group.">
+  <PageHeader title="Software & Data" kicker="Tools we have released" />
+  <section class="mx-auto max-w-6xl px-4 sm:px-6">
+    <ul class="grid gap-6 md:grid-cols-2">
+      {tools.map((t) => (
+        <li class="min-w-0 border border-rule bg-white p-5">
+          <a href={t.url} class="font-serif text-2xl leading-tight hover:text-navy">{t.name} <span aria-hidden="true" class="text-base text-muted">↗</span></a>
+          <p class="mt-2 text-ink/80">{t.what}</p>
+          <p class="mt-2 truncate text-sm text-muted">{t.url.replace(/^https:\/\//, '')}</p>
+        </li>
+      ))}
+    </ul>
+    <h2 class="mt-16 font-serif text-3xl">Code accompanying papers</h2>
+    <ul class="mt-6 divide-y divide-rule border-y border-rule">
+      {code.map((t) => (
+        <li class="py-4"><a href={t.url} class="font-serif text-xl hover:text-navy">{t.name}</a><p class="mt-1 text-sm text-muted">{t.what}</p></li>
+      ))}
+    </ul>
+    <p class="mt-6 text-sm text-muted">More on the lab's <a class="link" href={SITE.github}>GitHub organization</a>.</p>
+  </section>
+</Base>

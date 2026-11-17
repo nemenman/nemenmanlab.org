@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import { fmtDate, dateKey, inlineMd } from '../lib/site';
+
+interface Props { limit?: number; size?: 'sm' | 'lg' }
+const { limit, size = 'sm' } = Astro.props;
+const all = (await getCollection('news')).sort(
+  (a, b) => dateKey(b.data.date).localeCompare(dateKey(a.data.date)) || (b.data.order ?? 0) - (a.data.order ?? 0),
+);
+const items = limit ? all.slice(0, limit) : all;
+---
+<ol class="divide-y divide-rule border-y border-rule">
+  {items.map((n) => (
+    <li class:list={['grid gap-4 py-4', size === 'lg' ? 'grid-cols-[5.5rem_1fr] sm:grid-cols-[7rem_1fr]' : 'grid-cols-[4.5rem_1fr]']}>
+      <time datetime={n.data.date} class="smallcaps pt-0.5 text-sm text-muted">{fmtDate(n.data.date)}</time>
+      <p class:list={['font-serif leading-snug', size === 'lg' ? 'text-xl' : 'text-lg']} set:html={inlineMd(n.data.text)} />
+    </li>
+  ))}
+</ol>

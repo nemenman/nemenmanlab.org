@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { SITE, url } from '../lib/site';
+---
+<Base title="Contact" description="How to reach Ilya Nemenman and the Nemenman group at Emory University.">
+  <PageHeader title="Contact" />
+  <section class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-2">
+    <div>
+      <p class="smallcaps text-xs text-gold">Email</p>
+      <a href={`mailto:${SITE.email}`} class="mt-2 block break-all font-serif text-3xl text-navy hover:underline">{SITE.email}</a>
+      <p class="mt-4 text-muted">Prospective students and postdocs: please read <a class="link" href={url('/join/')}>Join the lab</a> first.</p>
+    </div>
+    <div class="grid gap-8 sm:grid-cols-2">
+      <div>
+        <p class="smallcaps text-xs text-gold">Mail</p>
+        <p class="mt-2 font-serif text-lg leading-relaxed">Ilya Nemenman<br />{SITE.address.map((l) => <>{l}<br /></>)}</p>
+      </div>
+      <div>
+        <p class="smallcaps text-xs text-gold">Elsewhere</p>
+        <ul class="mt-2 space-y-1">
+          <li><a class="link" href={SITE.scholar}>Google Scholar</a></li>
+          <li><a class="link" href={SITE.x}>X (@INemenman)</a></li>
+          <li><a class="link" href={SITE.github}>GitHub</a></li>
+          <li><a class="link" href={url('/Nemenman_CV.pdf')}>CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>

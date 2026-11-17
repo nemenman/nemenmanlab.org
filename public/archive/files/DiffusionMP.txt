@@ -1,0 +1,115 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Apr  8 00:13:50 2016
+
+@author: david hofmann
+"""
+
+import numpy as np
+import time
+from multiprocessing import Pool
+from functools import partial
+import matplotlib.pyplot as plt
+
+
+# PDE integrator
+def diffusion(D, dt, dx, u):
+    """ a: diffusion constant
+    dt: step size in time
+    dx: step size in space
+    u: grid of diffusing quantity
+    return: grid u after one time step """
+    tmp = np.empty((u.shape[0] - 2, u.shape[1] - 2))
+    for x in np.arange(1, u.shape[0] - 1):
+        for y in np.arange(1, u.shape[1] - 1):
+            tmp[x - 1, y - 1] = u[x, y] + dt * D *\
+                                (u[x - 1, y] + u[x, y - 1] - 4 * u[x, y] +
+                                 u[x + 1, y] + u[x, y + 1]) / dx**2
+    return tmp
+
+
+# set which code parts to use to compute solution
+sequential = True
+parallel = True
+# define integration step sizes
+dx = 1
+dt = 1
+
+L = 100   # system shape is square for convenience
+T = 100   # integration time
+D = 0.1   # diffusion constant
+
+# initial heat distribution
+grid = np.zeros(2 * [L * int(dx**-1)])
+gridsize = grid.shape
+grid[int(gridsize[0] / 2), int(gridsize[1] / 2)] = 70
+grid[int(gridsize[0] / 4), int(gridsize[1] / 4)] = 35
+
+# sequential processing solution
+if sequential:
+    grid_s = np.copy(grid)  # keep original grid variable unchanged
+    ts = time.time()  # measure computation time
+    for t in np.arange(T/dt):
+        # insert upper and lower boundary: reflecting boundary
+        tmp = np.insert(grid_s, (0, gridsize[0]), grid_s[(0, -1), :], axis=0)
+        # insert left and right boundary: reflecting boundary
+        tmp = np.insert(tmp, (0, gridsize[1]), tmp[:, (0, -1)], axis=1)
+        for i in np.arange(1, tmp.shape[0] - 1):
+            for j in np.arange(1, tmp.shape[1] - 1):
+                grid_s[i - 1, j - 1] = tmp[i, j] + dt * D * (tmp[i - 1, j] +
+                      tmp[i, j - 1] - 4 * tmp[i, j] + tmp[i + 1, j] +
+                      tmp[i, j + 1]) / dx**2
+    print('Sequential processing took {}s'.format(time.time() - ts))
+
+# concurrent processing solution
+if parallel:
+    # define number of processes
+    units = 2
+    p = Pool(units)
+
+    # define how many partitions of grid in x and y direction and their length
+    (nx, ny) = (int(units / 2), 2)
+    lx = int(gridsize[0] / nx)
+    ly = int(gridsize[1] / ny)
+
+    # this makes sure that D, dt, dx are the same when distributed over processes
+    # for integration, so the only interface parameter that changes is the grid
+    func = partial(diffusion, D, dt, dx)
+    ts = time.time()  # measure computation time
+    for t in np.arange(T/dt):  # note numpy.arange is rounding up floating points
+        data = []
+        # prepare data to be distributed among workers
+        # 1. insert boundary conditions and partition data
+        grid = np.insert(grid, (0, gridsize[0]), grid[(0, -1), :], axis=0)
+        grid = np.insert(grid, (0, gridsize[1]), grid[:, (0, -1)], axis=1)
+        # partition into subgrids
+        for i in range(nx):
+            for j in range(ny):
+                # subgrid
+                subg = grid[i * lx + 1:(i+1) * lx + 1, j * ly + 1:(j+1) * ly + 1]
+                # upper boundary
+                subg = np.insert(subg, 0, grid[i * lx, j * ly + 1:(j+1) * ly + 1],
+                                 axis=0)
+                # lower boundary
+                subg = np.insert(subg, subg.shape[0],
+                                 grid[(i+1) * lx + 1, j * ly + 1:(j+1) * ly + 1],
+                                 axis=0)
+                # left boundary
+                subg = np.insert(subg, 0, grid[i * lx:(i+1) * lx + 2, j * ly],
+                                 axis=1)
+                # right boundary
+                subg = np.insert(subg, subg.shape[1],
+                                 grid[i * lx:(i+1) * lx + 2, (j+1) * ly + 1],
+                                 axis=1)
+                # collect subgrids in list to be distributed over processes
+                data.append(subg)
+        # 2. divide among workers
+        results = p.map(func, data)
+        grid = np.vstack([np.hstack((results[i * ny:(i+1) * ny])) for i in range(nx)])
+
+    print('Parallel processing took {}s'.format(time.time() - ts))
+    # plot grid
+    plt.imshow(grid, cmap=plt.cm.copper, extent=[-1, 1, -1,  1])
+    plt.xticks([])
+    plt.yticks([])
+    plt.show()

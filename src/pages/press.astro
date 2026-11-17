@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { fmtDate, dateKey, url } from '../lib/site';
+
+const items = (await getCollection('press')).sort((a, b) => dateKey(b.data.date).localeCompare(dateKey(a.data.date)));
+const years = [...new Set(items.map((i) => i.data.date.slice(0, 4)))];
+---
+<Base title="Press coverage" description="News stories and press coverage of the Nemenman group's research.">
+  <PageHeader title="Press coverage" kicker="What others say about our work" />
+  <section class="mx-auto max-w-4xl px-4 sm:px-6">
+    {items.length === 0 && <p class="text-muted">Coming soon.</p>}
+    {years.map((y) => (
+      <div class="grid gap-2 border-t border-rule py-6 sm:grid-cols-[6rem_1fr] sm:gap-6">
+        <h2 class="font-serif text-2xl text-muted">{y}</h2>
+        <ul class="space-y-5">
+          {items.filter((i) => i.data.date.startsWith(y)).map((i) => (
+            <li>
+              <p class="font-serif text-xl leading-snug">
+                {i.data.url ? <a href={url(i.data.url)} class="hover:text-navy">{i.data.title}</a> : i.data.title}
+                {i.data.lang === 'ru' && <span class="text-sm text-muted"> (in Russian)</span>}
+              </p>
+              <p class="mt-1 text-sm text-muted">
+                {i.data.outlet} · {fmtDate(i.data.date, 'long')}
+                {i.data.archived && <span> · archived copy</span>}
+                {i.data.about && <span class="block">On: {i.data.about}</span>}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+</Base>

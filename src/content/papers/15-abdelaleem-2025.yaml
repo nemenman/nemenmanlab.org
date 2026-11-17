@@ -1,0 +1,9 @@
+n: 15
+authors: "_E Abdelaleem_, I Nemenman, and _KM Martini_"
+title: "Deep variational multivariate information bottleneck\u2013A framework for variational losses"
+journal: "J Machine Learn Research"
+citation: "26 (140), 1-50, 2025"
+year: 2025
+summary: "A single information-theoretic principle from which most variational dimensionality reduction methods can be derived, and which generates new, more data-efficient ones."
+arxiv: "2310.03311"
+directions: ["ai-physics"]  # draft mapping to research pages

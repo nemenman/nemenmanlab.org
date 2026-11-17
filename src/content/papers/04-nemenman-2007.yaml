@@ -1,0 +1,9 @@
+n: 4
+authors: "_NA Sinitsyn_ and I Nemenman"
+title: "Berry phase and pump effect in stochastic chemical kinetics"
+journal: "EPL"
+citation: "77, 58001, 2007"
+year: 2007
+summary: "Periodically driven chemical systems generate a net current of purely geometric origin, a classical analogue of the Berry phase."
+doi: "10.1209/0295-5075/77/58001"
+directions: ["systems-biology"]  # draft mapping to research pages

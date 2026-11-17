@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+// From the CV's "Research support" section (Nov 2026).
+const current = [
+  { funder: 'NSF', id: 'BCS 2605848', title: 'CRCNS research proposal: Neural and computational mechanisms of motor generalization in birdsong', role: 'PI (co-PI: Sober)', years: '2026–2029' },
+  { funder: 'Simons Foundation', title: 'Simons Investigator in Theoretical Physics in Life Sciences', role: 'Investigator', years: '2021–2031' },
+  { funder: 'DOE', id: 'Genesis Mission, Phase I', title: 'Data-driven discovery of multicomponent plasma fluid dynamics', role: 'co-I (PI: Burton)', years: '2026–2027' },
+  { funder: 'NSF', id: 'PHY 2409416', title: 'Bridging the gap between particle-based and continuum hydrodynamic descriptions of dusty plasma', role: 'co-PI (PI: Burton)', years: '2024–2027' },
+  { funder: 'Clinical trial', id: 'NCT06699810', title: 'Modeling ketosis-prone diabetes remission via diverse mechanisms of glucotoxicity', role: 'co-PI (PI: Vellanki)', years: '2025–2027' },
+];
+const past = [
+  ['NITMB', 'Optimization, prediction, and control in the design of the pancreatic endocrine network in mammals', '2024–2026'],
+  ['NSF-ANR MCB-PoLS 2209996', 'Precision of collective, distributed, dynamic gene regulation', '2023–2026'],
+  ['NSF PHY 2308017', 'Conference: Working across scales in complex systems', '2022–2023'],
+  ['NSF PHY 2011378', 'Theoretical biophysics: Searching for principles', '2022–2023'],
+  ['NIH 2R01NS084844', 'Vocal motor control and sensorimotor learning: behavior, muscles, and neurons', '2018–2024'],
+  ['NSF PHY 2014173', 'Modeling sources of variation in interaction networks using a C. elegans microbiome model', '2020–2023'],
+  ['NSF PHY 2010524', 'Dynamical inference of forces in dusty plasmas using three-dimensional laser sheet tomography', '2020–2024'],
+  ['Simons Foundation', 'Simons-Emory Consortium on Motor Control', '2020–2024'],
+  ['NSF BCS 1822677', 'CRCNS research proposal: Randomness and systematicity in neural codes for motor exploration', '2018–2022'],
+  ['NSF PoLS 1806833', 'Formation of a high-flux student research network (HF-SRN) as a laboratory for enhancing interaction in the PoLS SRN', '2018–2023'],
+  ['NIH 1R01NS099375', 'Spike timing codes for motor control', '2017–2022'],
+  ['NIH 1R01EB022872', 'Neural mechanisms and behavioral consequences of non-Gaussian likelihoods in sensorimotor learning', '2016–2019'],
+  ['Kavli Foundation', 'Kavli Brain Forum at Emory and Georgia Tech', '2016–2019'],
+  ['NSF PHY 1740578', '2017 Cargèse summer school on theoretical biophysics', '2017–2018'],
+  ['NSF PoLS 1410978', 'Collaborative research: Multicellular communication in gradient sensing', '2015–2018'],
+  ['James S. McDonnell Foundation 220020321', 'In search of simplicity: Coarse-graining cellular information processing networks', '2012–2017'],
+  ['NSF IOS 1208126', 'Computational characterization of C. elegans nociceptive behavior as a quantitative model for pain transduction', '2012–2016'],
+  ['HFSP RGY0084/2011', 'Adaptive behavior of C. elegans in complex sensory environments', '2011–2015'],
+  ['NIH NIGMS 2R13GM082162', 'Information processing in cellular signaling and gene regulation (q-bio Conference)', '2011–2014'],
+  ['NIH NCI 7R01CA132629', 'Differential metabolic analysis of tumor progression', '2007–2012'],
+  ['ARO 60704-NS-II', 'Improving image segmentation with adaptive, recurrent, spiking neural network models of the primary visual cortex', '2011–2012'],
+  ['DOE / LANL LDRD 20090001DR', 'Synthetic cognition through peta-scale modeling of mammalian visual cortex', '2008–2011'],
+  ['NSF OCI 0749348', 'Peta-scale computing infrastructure: high performance neural computing', '2008–2011'],
+  ['DOE / LANL LDRD 20080391ER', 'Stochastic transport on networks: Efficient modeling and applications to epidemiology', '2007–2010'],
+  ['DOE / LANL LDRD 20080138DR', 'Genomes to behavior: predicting bacterial response by constrained network interpolation', '2007–2010'],
+  ['NIH NIGMS 1R21GM080216', 'System-wide study of transcriptional control of metabolism', '2007–2009'],
+  ['NSF ECS 0425850', 'QSB: Optimal information processing in biological networks', '2004–2008'],
+  ['NSF ECS 0332479', 'SGER: Developing learning theory for genetic network inference', '2003–2005'],
+];
+---
+<Base title="Funding" description="Grants and foundations that support the Nemenman group.">
+  <PageHeader title="Funding" kicker="With thanks" lede="Our work is supported by the following grants and foundations." />
+  <section class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="font-serif text-3xl">Current support</h2>
+    <ul class="mt-6 grid gap-6 md:grid-cols-2">
+      {current.map((g) => (
+        <li class="border border-rule bg-white p-5">
+          <p class="smallcaps text-xs text-gold">{g.funder}{g.id && ` · ${g.id}`}</p>
+          <p class="mt-2 font-serif text-xl leading-snug">{g.title}</p>
+          <p class="mt-2 text-sm text-muted">{g.role} · {g.years}</p>
+        </li>
+      ))}
+    </ul>
+    <h2 class="mt-16 font-serif text-3xl">Past support</h2>
+    <ul class="mt-6 divide-y divide-rule border-y border-rule">
+      {past.map(([f, t, y]) => (
+        <li class="grid gap-1 py-3 sm:grid-cols-[6.5rem_1fr] sm:gap-6">
+          <span class="smallcaps pt-0.5 text-sm text-muted">{y}</span>
+          <span><span class="font-serif text-lg leading-snug">{t}</span><span class="block text-sm text-muted">{f}</span></span>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

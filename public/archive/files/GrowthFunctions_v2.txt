@@ -1,0 +1,45 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Feb  2 22:26:33 2016
+
+@author: nemenman
+"""
+
+
+def Malthus(Population):
+    """
+    this function returns the growth rate of a simple exponential growth
+    
+    Malthus(Population)
+
+        Population -- current population size
+    """
+    GrowthRate = 1.0
+    return GrowthRate*Population
+    
+    
+def MalthusForODE(Population,t,GrowthRate):
+    """
+    this function returns the growth rate of a simple exponential growth 
+        
+    Malthus(Population,t,GrowthRate)
+    
+        Population -- current population size
+        t -- time, unused
+        GrowthRate -- population Growth Rate
+    """
+    return GrowthRate*Population
+    
+        
+    
+def MalthusCapacity(Population):
+    """
+    this function returns the growth rate of a simple exponential growth
+    with carrying capacity
+        
+    Malthus(Population)
+    """
+    GrowthRate=1e-9
+    CarryingCapacity=10
+    return GrowthRate*Population*(CarryingCapacity-Population)
+

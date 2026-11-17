@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { url } from '../../lib/site';
+
+const items = (await getCollection('research')).sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Research" description="Research directions of the Nemenman group: AI for physics and physics for AI; animal learning and neural computation; systems biology and physiology.">
+  <PageHeader
+    title="Research"
+    kicker="Learning biology, and learning from biology"
+    lede="We work to understand how biological systems, such as cells, organisms, and populations, learn from their surrounding environment and respond to it. Put differently: what are the computational primitives employed by living organisms to compute their way through life?"
+  />
+  <section class="mx-auto max-w-6xl px-4 sm:px-6">
+    <ol class="divide-y divide-rule border-y border-rule">
+      {items.map((r, i) => (
+        <li>
+          <a href={url(`/research/${r.id}/`)} class="group grid items-center gap-5 py-8 sm:grid-cols-[10rem_1fr] md:grid-cols-[14rem_1fr] md:gap-10">
+            <div class="aspect-[4/3] w-36 overflow-hidden border border-rule bg-white sm:w-auto">
+              <Image src={r.data.image} alt={r.data.imageAlt} widths={[288, 448]} sizes="(min-width: 768px) 14rem, 10rem" class="h-full w-full object-contain p-3" />
+            </div>
+            <div>
+              <p class="smallcaps text-xs text-gold">0{i + 1}</p>
+              <h2 class="mt-1 font-serif text-3xl leading-tight group-hover:text-navy">{r.data.title}</h2>
+              <ul class="mt-3 space-y-1 font-serif text-lg italic leading-snug text-ink/75">
+                {r.data.questions.map((q) => <li>{q}</li>)}
+              </ul>
+              <span class="mt-4 inline-block text-sm text-muted group-hover:text-ink">Read more →</span>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
+</Base>

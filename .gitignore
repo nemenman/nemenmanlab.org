@@ -1,0 +1,12 @@
+# raw crawl of the old wiki and Squarespace draft (527 MB, includes third-party PDFs) — keep local only
+sources/
+mockups/img/
+# build output and deps
+dist/
+node_modules/
+.astro/
+.DS_Store
+# local working notes (contain internal review notes about people), design mockups, editor config
+notes/
+mockups/
+.claude/

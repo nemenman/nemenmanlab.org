@@ -1,0 +1,9 @@
+n: 6
+authors: "D Schwab, I Nemenman, and P Mehta"
+title: "Zipf\u2019s law and criticality in multivariate data without fine-tuning"
+journal: "Phys Rev Lett"
+citation: "113, 068102, 2014"
+year: 2014
+summary: "Apparent critical behavior in biological data can arise generically from a hidden fluctuating variable, requiring no tuning to a critical point."
+doi: "10.1103/PhysRevLett.113.068102"
+directions: ["ai-physics"]  # draft mapping to research pages

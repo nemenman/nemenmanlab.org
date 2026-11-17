@@ -1,0 +1,16 @@
+---
+title: "Law of large numbers"
+group: "physics-434-2016"
+wiki_title: "Physics 434, 2016: Law of large numbers"
+order: 40
+---
+
+One of the important results in probability theory is the law of large numbers, which is what we consider in this lecture.
+
+Let's ask the following question. Suppose we have a biased coin, with an unknown probability $p$ for coming heads up (in other words, the coin is a Bernoulli random number, with probability $p$). The coin is thrown $N$ times, and comes up $n$ times heads up. Clearly, in general, $n/N$ is not going to be exactly $p$ (for starters, $n/N$ is always rational, and $p$ can be arbitrary). But how close will they be? This is a very important question. Indeed, we previously defined the probability as a limit of frequencies for large $N$. Is our definition self-consistent? Do the frequencies actually converge to probabilities?
+
+To answer this, let's suppose we have a variable with an expectation value $\langle x\rangle$ and the variance $\sigma^2_x$. We take samples $x_n,\, n=1,\dots,N$ of this variable. We then define the *empirical* mean, or the *sample* mean $\bar{x}=\frac{1}{N}\sum_{n=1}^N x_n$. Note here that we use the notation $\langle\cdots\rangle$ to denote expectation values, and $\bar{\cdots}$ to denote empirical means. Our questions of whether frequencies converge to probabilities is then a special case of a more general question: how close is an expectation value of a variable $x$, namely $\langle x\rangle$, to its empirical mean $\bar{x}$?
+
+This question is easy to answer for a special case of frequencies of Bernoulli variables. Here we can use the fact that the distribution of heads is given by the binomial distribution, $B(p,N)$. As we showed previously, for the binomial distribution, $\mu = pN$, so that the frequency becomes $f=pN/N=p$. Thus, indeed, the frequency converges to the probability. Further, for the binomial distribution, $\sigma = \sqrt{Np(1-p)}$, and thus the standard deviation of the frequency becomes $\sigma_f=\sqrt{p(1-p)/N}$. Thus the ratio of the standard deviation of the frequency to its mean is $\sigma_f/f=\sqrt{(1-p)/(Np)}$. So not only does the frequency of a Bernoulli variable converges to the probability, but the error decreases as about $\propto 1/\sqrt{N}$.
+
+Does this result hold more generally, beyond Bernoulli variables? We previously showed that, for independent variables, means and variances ad. Let's use this fact to answer the question. What is the expected value and the standard deviation of the empirical mean? We can write these as $\langle \bar{x}\rangle = \frac{1}{N}\langle \sum_{n=1}^N x_n\rangle$. Using the law of summation of the means, this becomes $\langle \bar{x}\rangle = \frac{1}{N} \sum_{n=1}^N \langle x_n\rangle = \langle x\rangle$. Thus the empirical mean converges to the true mean, as long as the true mean exist (for some *long-tailed* distributions, means don't exist, as we will see in the homework problem). How quickly does this convergence happen? We now calculate $\sigma^2_{\bar{x}} = \sum_{n=1}^N\sigma^2(x_n/N) = \frac{1}{N^2}\sum_{n=1}^N\sigma^2(x_n)= \frac{\sigma^2_x}{N}$. Thus the spread of an expectation value around its empirical mean decreases with the number of samples as $\propto 1/\sqrt{N}$, provided, of course, that the variance of a single sample is finite.

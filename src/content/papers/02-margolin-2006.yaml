@@ -1,0 +1,9 @@
+n: 2
+authors: "A Margolin, I Nemenman, K Basso, U Klein, C Wiggins, G Stolovitzky, Riccardo D Favera, and A Califano"
+title: "ARACNE: An algorithm for reconstruction of genetic networks in a mammalian cellular context"
+journal: "BMC Bioinformatics"
+citation: "7 (Suppl. 1), S7, 2006"
+year: 2006
+summary: "An information-theoretic method for reconstructing transcriptional regulatory networks from expression data, among the most widely used network reconstruction tools in systems biology."
+doi: "10.1186/1471-2105-7-S1-S7"
+directions: ["systems-biology"]  # draft mapping to research pages

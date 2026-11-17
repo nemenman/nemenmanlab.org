@@ -1,0 +1,9 @@
+n: 10
+authors: "_B Zhou_, _D Hofmann_, _I Pinkoviezky_, SJ Sober, and I Nemenman"
+title: "Chance, long tails, and inference in a non-Gaussian, Bayesian theory of vocal learning in songbirds"
+journal: "Proc Natl Acad Sci (USA)"
+citation: "115, E8538-E8546, 2018"
+year: 2018
+summary: "A non-Gaussian Bayesian theory of sensorimotor learning explains why birds discount rare large vocal errors and quantitatively models the distribution of song statistics."
+doi: "10.1073/pnas.1713020115"
+directions: ["animal-learning"]  # draft mapping to research pages

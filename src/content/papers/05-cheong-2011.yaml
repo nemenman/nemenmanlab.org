@@ -1,0 +1,9 @@
+n: 5
+authors: "R Cheong, A Rhee, J Wang, I Nemenman, and A Levchenko"
+title: "Information transduction capacity of noisy biochemical signaling networks"
+journal: "Science"
+citation: "334, 354, 2011"
+year: 2011
+summary: "First direct measurement of how many bits a mammalian signaling pathway transmits, showing that single pathways carry barely more than one bit."
+doi: "10.1126/science.1204553"
+directions: ["systems-biology"]  # draft mapping to research pages

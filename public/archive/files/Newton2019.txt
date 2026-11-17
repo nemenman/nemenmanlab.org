@@ -1,0 +1,175 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Newton-Raphson \n",
+    "This notebook solves for an equilibrium position of a charge using the Newton-Raphson method (also known as the Newton method)."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Initialization"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np #importing the numpy module\n",
+    "\n",
+    "p1 = 0 # position of three fixed charges\n",
+    "p2 = 10 \n",
+    "p3 = 12\n",
+    "q1 = 1 # values of three charges\n",
+    "q2 = 2\n",
+    "q3 = 0.5\n",
+    "x0 = 7 # initial condition\n",
+    "Tolerance = 1e-5 # tolerance for change before termination"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Main loop"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "32.056451612903224\n",
+      "19.977839200134042\n",
+      "14.057737029796986\n",
+      "11.156531449392414\n",
+      "13.382616409777734\n",
+      "10.74794926077331\n",
+      "11.916837765578872\n",
+      "8.039865135913525\n",
+      "12.746630369188855\n",
+      "10.223606772185512\n",
+      "11.357201883276476\n",
+      "16.381071346582882\n",
+      "12.326641303488291\n",
+      "9.62200383685139\n",
+      "11.17294219974622\n",
+      "13.506853612249078\n",
+      "10.82976315243594\n",
+      "12.07933396503517\n",
+      "8.932436580760733\n",
+      "11.354173529895755\n",
+      "16.288806916473792\n",
+      "12.282064596922513\n",
+      "9.527766968137897\n",
+      "11.172093825838104\n",
+      "13.500166678055814\n",
+      "10.825460307739025\n",
+      "12.069893163659405\n",
+      "8.894778655777223\n",
+      "11.378747861933949\n",
+      "17.13567711715976\n",
+      "12.69001801242758\n",
+      "10.161777333092594\n",
+      "11.322225820688804\n",
+      "15.46935997208433\n",
+      "11.88307134480992\n",
+      "7.753460444858843\n",
+      "13.939102782426012\n",
+      "11.089826430684292\n",
+      "12.968513484996851\n",
+      "10.434764975786532\n",
+      "11.51477080730097\n",
+      "49.337438582691405\n",
+      "28.564715264982357\n",
+      "18.25371833655959\n",
+      "13.227186713518435\n",
+      "10.639019112562423\n",
+      "11.745197235690837\n",
+      "5.62945339578689\n",
+      "1.163355604728232\n",
+      "3.156821650551564\n",
+      "3.6046061971461376\n",
+      "3.599390842983708\n",
+      "3.5998466464241123\n",
+      "3.5998072343252763\n",
+      "3.5998106453823393\n"
+     ]
+    }
+   ],
+   "source": [
+    "x = x0 #initial value for starting the loop\n",
+    "dx = 1.0 # fake \"last change in x\"\n",
+    "while(np.abs(dx) > Tolerance):\n",
+    "    F = q1*(x-p2)**2*(x-p3)**2 - q2*(x-p1)**2*(x-p3)**2 - q2*(x-p2)**2*(x-p1)**2\n",
+    "    G = 2*q1*(x-p2)*(x-p3)**2 + 2*q1*(x-p2)**2*(x-p3) - 2*q2*(x-p1)*(x-p3)**2  -\\\n",
+    "        2*q2*(x-p1)**2*(x-p3) - 2*q3*(x-p2)*(x-p1)**2 - 2*q3*(x-p2)**2*(x-p1)\n",
+    "    dx = -F/G\n",
+    "    x = x+dx\n",
+    "    print(x)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Termination"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "The zero of the function is 3.5998106453823393.\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(\"The zero of the function is \", x, \".\", sep=\"\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.1"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

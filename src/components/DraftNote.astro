@@ -1,0 +1,10 @@
+---
+// Visible reviewer note for content that still needs Ilya's input.
+// Hidden in production builds when SHOW_DRAFT_NOTES=false.
+const show = (import.meta.env.SHOW_DRAFT_NOTES ?? process.env.SHOW_DRAFT_NOTES ?? 'true') !== 'false';
+---
+{show && (
+  <aside class="my-6 border-l-4 border-yellow-400 bg-yellow-50 px-4 py-3 font-sans text-sm leading-relaxed text-yellow-950" role="note">
+    <span class="font-semibold">Draft · </span><slot />
+  </aside>
+)}

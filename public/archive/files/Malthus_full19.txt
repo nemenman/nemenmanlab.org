@@ -1,0 +1,33 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jan 13 09:10:36 2016
+
+@author: nemenman
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+
+SimulationTime = 10.0
+dt = 0.1
+GrowthRate = 0.2
+Time = np.arange(dt, SimulationTime, dt)
+Population = np.zeros(Time.size)
+Population[0] = 1.0
+
+for i in np.arange(1, Time.size):
+    Population[i] = Population[i-1] + dt * GrowthRate * Population[i-1]
+
+PopulationExact = Population[0] * np.exp(Time*GrowthRate)
+
+plt.plot(Time, Population, label='Numerical solution')
+plt.plot(Time, PopulationExact, label='Exact solution')
+plt.legend()
+# there are alternative ways for labeling; using get_lines() and setting line
+# labels, or using ax.legend()
+
+plt.title('Malthusian bacterial population growth')
+plt.xlabel('Time, hours')
+# an alternative way of changing things is to change attributes directly
+ax = plt.gca()
+ax.set_ylabel('Number of bacteria')
+plt.show()

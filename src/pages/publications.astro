@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import PaperItem from '../components/PaperItem.astro';
+import { SITE, url } from '../lib/site';
+
+const papers = (await getCollection('papers')).sort((a, b) => b.data.n - a.data.n);
+---
+<Base title="Publications" description="Favorite papers from the Nemenman group, with a link to the full bibliography on Google Scholar.">
+  <PageHeader title="Publications" kicker="Favorite papers" />
+  <section class="mx-auto max-w-6xl px-4 sm:px-6">
+    <a href={SITE.scholar} class="group flex flex-col justify-between gap-3 border border-navy/20 bg-white px-6 py-5 hover:border-navy sm:flex-row sm:items-center">
+      <span>
+        <span class="block font-serif text-2xl text-navy">Full bibliography on Google Scholar</span>
+        <span class="mt-1 block text-sm text-muted">All papers, preprints, and citation counts, kept current automatically.</span>
+      </span>
+      <span class="text-sm font-medium text-navy group-hover:underline">Open Google Scholar →</span>
+    </a>
+    <p class="mt-3 text-sm text-muted">A complete list is also in the <a class="link" href={url('/Nemenman_CV.pdf')}>CV (PDF)</a>.</p>
+
+    <h2 class="mt-14 font-serif text-3xl">Favorite papers</h2>
+    <p class="mt-2 text-sm text-muted">Students and postdocs advised or co-advised in the group are in <em>italics</em>.</p>
+    <ol class="mt-2 divide-y divide-rule border-b border-rule">
+      {papers.map((p) => <PaperItem paper={p} />)}
+    </ol>
+  </section>
+</Base>

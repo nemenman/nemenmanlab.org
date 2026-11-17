@@ -1,0 +1,9 @@
+n: 8
+authors: "D Ellison, _A Mugler_, M Brennan, S H Lee, R Huebner, E Shamir, L A Woo, J Kim, P Amar, I Nemenman, A Ewald, A Levchenko"
+title: "Cell-cell communication enhances the capacity of cell ensembles to sense shallow gradients during morphogenesis"
+journal: "Proc Natl Acad Sci (USA)"
+citation: "113, E679, 2016"
+year: 2016
+summary: "Gap junction communication lets cell ensembles sense shallow chemical gradients far more precisely than isolated cells can, confirmed in mammary epithelial organoids."
+doi: "10.1073/pnas.1516503113"
+directions: ["systems-biology"]  # draft mapping to research pages

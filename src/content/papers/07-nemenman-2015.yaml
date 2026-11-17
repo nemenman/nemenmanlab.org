@@ -1,0 +1,9 @@
+n: 7
+authors: "BC Daniels and I Nemenman"
+title: "Automated adaptive inference of phenomenological dynamical models"
+journal: "Nature Communications"
+citation: "6, 8133, 2015"
+year: 2015
+summary: "An algorithm that builds predictive dynamical models of biological systems directly from data, adapting model complexity to the amount of evidence available."
+doi: "10.1038/ncomms9133"
+directions: ["ai-physics"]  # draft mapping to research pages

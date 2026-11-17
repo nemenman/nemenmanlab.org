@@ -1,0 +1,100 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { url } from '../lib/site';
+
+// Courses taught at Emory since 2009 (CV, Nov 2026).
+const emoryCourses = [
+  'Introductory Physics',
+  'Computational Neuroscience',
+  'Stochasticity in Biology',
+  'Physical Biology: Information Processing in Biological Systems',
+  'Quantum Field Theory',
+  'Graduate Electrodynamics',
+  'Freshman Seminar: Where do laws of nature come from?',
+  'Computational Modeling for Scientists and Engineers',
+  'Statistical Physics of Inference',
+  'Principles of Deep Learning',
+  'Introduction to Biological Physics',
+  'Random Matrix Theory in Physics and Inference',
+  'Physical Principles of AI',
+  'Freshman Seminar: Physics and AI',
+  'Physical Modeling of Diseases',
+];
+// Schools organized (CV, "Synergistic activities").
+const organized = [
+  { name: 'Theoretical Biophysics Summer School', where: 'Cargèse, Corsica, France', when: '2028' },
+  { name: 'Theoretical Biophysics Summer School', where: 'Les Houches, France', when: '2023' },
+  { name: 'Theoretical Biophysics Summer School', where: 'Boulder Summer School on Condensed Matter Physics, Boulder, CO', when: '2019' },
+  { name: 'Theoretical Biophysics Summer School', where: 'Cargèse, Corsica, France', when: '2017' },
+  { name: 'The q-bio Conference and Summer School', where: 'founder (2006), Advisory Board chair (2013–2016)', when: '2007–2015' },
+];
+// Lectures at schools and mini-courses (CV, "Teaching").
+const lectured = [
+  { name: 'Information bottleneck and variational methods, miniclass', where: 'Center for Computational Neuroscience, Flatiron Institute, New York, NY', when: '2026' },
+  { name: 'Konstanz School on Collective Behavior', where: 'Konstanz, Germany', when: '2025' },
+  { name: 'Neurophysics of Locomotion, Santa Barbara Advanced School of Quantitative Biology', where: 'Santa Barbara, CA', when: '2022' },
+  { name: 'Quantitative Approaches to Behavior summer school', where: 'Lisbon, Portugal', when: '2022' },
+  { name: 'Emory-Tibet Science Initiative: Quantum Mechanics and Classical Mechanics for Tibetan monastics', where: 'India', when: '2012, 2015' },
+  { name: 'Information Processing in Biology summer school', where: 'Beijing University, China', when: '2009' },
+  { name: 'Los Alamos Summer School', where: 'Los Alamos, NM', when: '2006–2007' },
+];
+const archive = (await getCollection('archive')).filter((e) => e.data.index && e.data.kind === 'course');
+const byCourse = new Map<string, typeof archive>();
+for (const e of archive.sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0))) {
+  const k = e.data.code ?? e.data.group_title ?? e.data.title;
+  byCourse.set(k, [...(byCourse.get(k) ?? []), e]);
+}
+---
+<Base title="Teaching" description="Courses taught by Ilya Nemenman at Emory, summer schools organized, an open-source textbook, and archived course materials.">
+  <PageHeader title="Teaching" kicker="Courses, schools, and an open textbook" />
+  <section class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-12">
+    <div class="md:col-span-7">
+      <h2 class="font-serif text-3xl">Courses at Emory</h2>
+      <p class="mt-3 text-muted">Courses taught since 2009. Materials for current classes live on Emory's internal course system, so they are not linked here.</p>
+      <ul class="mt-6 grid gap-x-8 gap-y-2 font-serif text-lg sm:grid-cols-2">
+        {emoryCourses.map((c) => <li class="border-b border-rule pb-2">{c}</li>)}
+      </ul>
+    </div>
+    <aside class="md:col-span-5">
+      <div class="border border-rule bg-white p-6">
+        <p class="smallcaps text-xs text-gold">Open-source textbook</p>
+        <h2 class="mt-2 font-serif text-2xl leading-tight">Introduction to Computational Modeling</h2>
+        <p class="mt-2 text-sm text-muted">Jupyter-notebook chapters and project modules written for Physics 212 (2019–2020): learning Python, building and solving dynamical models, optimization, stochastic simulations, parallel processing.</p>
+        <a href="https://github.com/EmoryUniversityTheoreticalBiophysics/ComputationalModelingTextbook" class="mt-4 inline-block text-sm font-medium text-navy hover:underline">Read it on GitHub →</a>
+      </div>
+    </aside>
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-12 px-4 pt-16 sm:px-6 md:grid-cols-2">
+    <div>
+      <h2 class="font-serif text-3xl">Summer schools organized</h2>
+      <ul class="mt-5 divide-y divide-rule border-y border-rule">
+        {organized.map((s) => <li class="grid grid-cols-[5.5rem_1fr] gap-4 py-3"><span class="smallcaps pt-1 text-sm text-muted">{s.when}</span><span><span class="font-serif text-lg">{s.name}</span><span class="block text-sm text-muted">{s.where}</span></span></li>)}
+      </ul>
+    </div>
+    <div>
+      <h2 class="font-serif text-3xl">Lectures at schools</h2>
+      <ul class="mt-5 divide-y divide-rule border-y border-rule">
+        {lectured.map((s) => <li class="grid grid-cols-[5.5rem_1fr] gap-4 py-3"><span class="smallcaps pt-1 text-sm text-muted">{s.when}</span><span><span class="font-serif text-lg">{s.name}</span><span class="block text-sm text-muted">{s.where}</span></span></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 pt-16 sm:px-6" id="old-courses">
+    <h2 class="font-serif text-3xl">Old courses</h2>
+    <p class="mt-3 max-w-3xl text-muted">Full lecture notes, homework, and projects from earlier Emory courses, carried over from the old lab wiki.</p>
+    {byCourse.size === 0
+      ? <p class="mt-6 text-sm text-muted">Being converted from the old site.</p>
+      : <ul class="mt-6 divide-y divide-rule border-y border-rule">
+          {[...byCourse.entries()].map(([code, list]) => (
+            <li class="grid gap-2 py-4 sm:grid-cols-[14rem_1fr] sm:gap-6">
+              <span class="font-serif text-xl">{code}{list[0].data.code && <span class="block text-sm text-muted">{list[0].data.group_title}</span>}</span>
+              <span class="flex flex-wrap gap-x-5 gap-y-1">{list.map((e) => <a class="link" href={url(`/archive/${e.data.group}/`)}>{e.data.year}{list.some((o) => o !== e && o.data.year === e.data.year) ? `: ${e.data.group_title}` : ''}</a>)}</span>
+            </li>
+          ))}
+        </ul>}
+    <p class="mt-4 text-sm text-muted">See also the <a class="link" href={url('/archive/')}>archive of old courses and events</a>.</p>
+  </section>
+</Base>

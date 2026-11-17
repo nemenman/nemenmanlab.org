@@ -1,0 +1,62 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Mar 22 23:04:08 2016
+
+@author: nemenman
+"""
+
+import numpy as np
+import numpy.random as nprnd
+import matplotlib.pyplot as plt
+
+# examples of random number generation
+r1 = nprnd.random(10)
+r2 = nprnd.random((10, 3))
+
+plt.hist(nprnd.random(int(1e5)), bins=50)
+plt.show()
+
+
+# a function to integrate using Monte Carlo
+def to_integr(x):
+    return x**2
+
+
+# monte carlo integrator
+def mc_integr(func, a, b, fmax, N):
+    x = a+(b-a)*nprnd.random(int(N))
+    y = fmax*nprnd.random(int(N))
+    counts_under_curve = np.sum(y <= func(x))
+    frac_under_curve = counts_under_curve/int(N)
+    area = (b-a)*fmax*frac_under_curve
+    return area
+
+
+# area using monte carlo integrator
+area = mc_integr(to_integr, 0, 1, 2, 100000)
+
+
+# investigating the dependence of the accuracy of the MC integrator
+# on the number of samples
+n_trials = 10
+N = np.logspace(1, 5, 9)
+areaN = np.zeros((N.size, n_trials))
+
+for i in np.arange(N.size):
+    for j in np.arange(n_trials):
+        areaN[i, j] = mc_integr(to_integr, 0, 1, 2, N[i])
+
+
+# plotting areas as a function of N
+plt.semilogx(N, areaN, 'o')
+plt.xlabel('N')
+plt.ylabel('area')
+plt.show()
+
+# plotting the standard deviation of the area as a function of N
+# and comparing to 1/sqrt(N)
+plt.loglog(N, np.std(areaN, 1), 'o')
+plt.loglog(N, 1/np.sqrt(N))
+plt.xlabel('N')
+plt.ylabel('standard deviation of the area')
+plt.show()

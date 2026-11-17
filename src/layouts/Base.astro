@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+import { SITE, NAV, FOOTER_LINKS, url } from '../lib/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title, description = SITE.description } = Astro.props;
+const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} · Theoretical Biological Physics at Emory`;
+const path = Astro.url.pathname.replace(import.meta.env.BASE_URL.replace(/\/$/, ''), '') || '/';
+const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
+const canonical = new URL(Astro.url.pathname, Astro.site);
+// Preview builds (served under a sub-path on github.io) stay out of search engines.
+const isPreview = import.meta.env.BASE_URL.replace(/\/$/, '') !== '';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  {isPreview && <meta name="robots" content="noindex, nofollow" />}
+  <link rel="canonical" href={canonical} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="sitemap" href={url('/sitemap-index.xml')} />
+</head>
+<body class="flex min-h-screen flex-col">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-3 focus:py-2">Skip to content</a>
+
+  <header class="border-b border-rule">
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-4 sm:px-6 sm:py-5">
+      <a href={url('/')} class="font-serif text-2xl font-semibold tracking-tight text-navy">{SITE.name}</a>
+      <nav aria-label="Main" class="hidden gap-6 text-sm text-muted md:flex">
+        {NAV.map((n) => (
+          <a href={url(n.href)} class:list={['hover:text-ink', isActive(n.href) && 'text-ink underline decoration-gold decoration-2 underline-offset-[10px]']} aria-current={isActive(n.href) ? 'page' : undefined}>{n.label}</a>
+        ))}
+      </nav>
+      <details class="group relative md:hidden">
+        <summary class="cursor-pointer list-none text-sm text-muted [&::-webkit-details-marker]:hidden" aria-label="Menu">
+          <span class="group-open:hidden">Menu ☰</span><span class="hidden group-open:inline">Close ✕</span>
+        </summary>
+        <nav aria-label="Main (mobile)" class="absolute right-0 top-9 z-40 flex w-60 flex-col border border-rule bg-paper py-2 shadow-lg">
+          {NAV.map((n) => <a href={url(n.href)} class="px-4 py-2.5 text-ink hover:bg-white">{n.label}</a>)}
+          <hr class="my-2 border-rule" />
+          {FOOTER_LINKS.map((n) => <a href={url(n.href)} class="px-4 py-2 text-sm text-muted hover:bg-white">{n.label}</a>)}
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main id="main" class="flex-1">
+    <slot />
+  </main>
+
+  <footer class="mt-16 border-t border-rule bg-white/60">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 text-sm text-muted sm:px-6 md:grid-cols-3">
+      <div>
+        <p class="font-serif text-lg text-ink">{SITE.name}</p>
+        <p class="mt-1">{SITE.address.map((l) => <>{l}<br /></>)}</p>
+      </div>
+      <nav aria-label="More" class="flex flex-col gap-1">
+        {FOOTER_LINKS.map((n) => <a href={url(n.href)} class="hover:text-ink">{n.label}</a>)}
+      </nav>
+      <div class="flex flex-col gap-1">
+        <a href={`mailto:${SITE.email}`} class="hover:text-ink">{SITE.email}</a>
+        <a href={SITE.scholar} class="hover:text-ink">Google Scholar</a>
+        <a href={url('/Nemenman_CV.pdf')} class="hover:text-ink">CV (PDF)</a>
+        <a href={SITE.x} class="hover:text-ink">X (@INemenman)</a>
+        <a href={SITE.github} class="hover:text-ink">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

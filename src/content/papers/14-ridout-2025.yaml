@@ -1,0 +1,9 @@
+n: 14
+authors: "_SA Ridout_, P Vellanki, and I Nemenman"
+title: "A mathematical model for ketosis-prone diabetes suggests the existence of multiple pancreatic \u03b2-cell inactivation mechanisms"
+journal: "eLife"
+citation: "13:RP100193, 2025"
+year: 2025
+summary: "Building a minimal dynamical model of clinical data reveals that remission in ketosis-prone diabetes requires more than one mechanism of reversible \u03b2-cell inactivation."
+doi: "10.7554/eLife.100193"
+directions: ["systems-biology"]  # draft mapping to research pages

@@ -1,0 +1,12 @@
+---
+title: "Homework 7"
+group: "physics-434-2014"
+wiki_title: "Physics 434, 2014: Homework 7"
+order: 160
+---
+
+1.  Show that $I[X;Y]=S[X]- S[X|Y]$ is equal to $I[X;Y]=S[X] +S[Y]- S[X,Y]$.
+2.  What is the differential entropy of an exponential distribution?
+3.  How much information can a spiking neuron transmit? This is limited from above by its entropy rate. Let's represent a neuron as releasing action potentials with a Poisson process with a certain rate $r$, and let's calculate the entropy rate of the Poisson process. First represent this process by discretizing time in intervals $\Delta t$. Explain why the entropy of the Poisson generated sequence of duration $T$ (or, alternatively, $n=T/\Delta t$ symbols) is *exactly* proportional to time, that is $S=sn$, where $s$ is some constant. Thus we only need to calculate the entropy of a single symbol, this $s$, in order to find the entropy rate as $R=\frac{sT}{\Delta t T}$. Does this rate have a finite value as $\Delta t\to0$? Why or why not? Estimate the maximum bitrate of a neuron that can control placement of its spikes to the accuracy of 1 ms.
+4.  *Graduate students:* Suppose now the neuron has what's called a *refractory period*. That is, after a spike, a neuron cannot fire for the time $\tau_r$. What is the entropy rate of such neuron?
+5.  Let's explore the channel coding theorem (and also learn how to do optimization in Matlab and Octave). Suppose we have the following molecular information processing channel: for any number of molecules on the input $x$, the channel output $y$ is a Poisson variable with that mean (this is relevant to Ziv et al, 2007, which was discussed by Martin in one of the lectures). That is, $P(y|x)=\frac{x^ye^{-x}}{y!}$. Write a code to estimate the mutual information over this channel for an arbitrary distribution of the (discrete) input signal. Use the input distribution as an input to the function you write. Explore different input distributions, assuming that the number of input molecules is between 0 and 64. What are the general features of the input distribution that achieve higher mutual information? Recall that Ziv et al. have shown that you should be able to send $1/2\log_2 \bar{N}\approx 1/2 \log_2 64/2=2.5$ bits through this channel. Can you find a distribution that allows you to send close to these $\approx 2.5$ bits? Submit plots of your "most informative" distributions.

@@ -1,0 +1,35 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Feb  3 08:00:09 2016
+
+@author: nemenman
+"""
+import numpy as np
+
+def func(x):
+    return x**3+.5
+    
+def funcprime(x):
+    return 3*x**2
+    
+def gfunc(x):
+    return x**2+x-5
+
+def gfuncprime(x):
+    return 2*x+1
+    
+
+def newton(FunToZero,dFunToZero,x0):
+    dx=1.0
+    Tolerance=1e-5
+    x=x0
+    while(np.abs(dx)>Tolerance):
+        F=FunToZero(x)
+        dF=dFunToZero(x)
+        dx=-F/dF
+        x=x+dx
+    return x
+        
+    
+x=newton(gfunc,gfuncprime,2)
+print(x)

@@ -1,0 +1,71 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import DraftNote from '../../components/DraftNote.astro';
+import PaperItem from '../../components/PaperItem.astro';
+import { url } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const items = await getCollection('research');
+  return items.map((r) => ({ params: { slug: r.id }, props: { entry: r } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const papers = (await getCollection('papers'))
+  .filter((p) => p.data.directions?.includes(entry.id))
+  .sort((a, b) => b.data.year - a.data.year);
+const all = (await getCollection('research')).sort((a, b) => a.data.order - b.data.order);
+const d = entry.data;
+---
+<Base title={d.title} description={d.questions.join(' ')}>
+  <article class="mx-auto max-w-6xl px-4 pt-12 sm:px-6 md:pt-16">
+    <p class="smallcaps text-sm text-gold"><a href={url('/research/')} class="hover:text-ink">Research</a></p>
+    <div class="mt-3 grid gap-10 md:grid-cols-12">
+      <div class="md:col-span-8">
+        <h1 class="font-serif text-4xl leading-tight tracking-tight sm:text-5xl">{d.title}</h1>
+        <ul class="mt-6 space-y-2 font-serif text-xl italic leading-snug text-navy">
+          {d.questions.map((q) => <li>{q}</li>)}
+        </ul>
+        {d.draft_note && <DraftNote>{d.draft_note}</DraftNote>}
+        <div class="prose-lab mt-6"><Content /></div>
+      </div>
+      <figure class="md:col-span-4">
+        <div class="border border-rule bg-white p-4">
+          <Image src={d.image} alt={d.imageAlt} widths={[400, 700]} sizes="(min-width: 768px) 360px, 100vw" class="w-full" />
+        </div>
+      </figure>
+    </div>
+
+    {d.projects && d.projects.length > 0 && (
+      <section class="mt-14">
+        <h2 class="font-serif text-3xl">Current projects</h2>
+        <ul class="mt-5 divide-y divide-rule border-y border-rule">
+          {d.projects.map((p) => (
+            <li class="py-4">
+              <p class="font-serif text-xl leading-snug">{p.title}</p>
+              {p.detail && <p class="mt-1 text-sm text-muted">{p.detail}</p>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <section class="mt-14">
+      <h2 class="font-serif text-3xl">Representative publications</h2>
+      <ol class="mt-2 divide-y divide-rule border-b border-rule">
+        {papers.map((p) => <PaperItem paper={p} />)}
+      </ol>
+      <p class="mt-4 text-sm text-muted">More on the <a href={url('/publications/')} class="link">Publications</a> page.</p>
+    </section>
+
+    <section class="mt-14">
+      <h2 class="font-serif text-3xl">People</h2>
+      <DraftNote>Which current members work on this direction? To be filled in.</DraftNote>
+    </section>
+
+    <nav class="mt-16 flex flex-wrap gap-x-8 gap-y-2 border-t border-rule pt-6 text-sm text-muted" aria-label="Other directions">
+      {all.filter((r) => r.id !== entry.id).map((r) => <a href={url(`/research/${r.id}/`)} class="hover:text-ink">{r.data.title} →</a>)}
+    </nav>
+  </article>
+</Base>

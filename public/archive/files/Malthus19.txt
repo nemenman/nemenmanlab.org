@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jan 13 09:10:36 2016
+
+@author: nemenman
+"""
+import numpy as np
+SimulationTime = 1.0
+dt = 0.001
+GrowthRate = 1.0
+Population = 1.0
+
+for Time in np.arange(dt, SimulationTime+dt, dt):
+    Population = Population + dt * GrowthRate * Population
+    print('Time = ' + str(Time) + '; Population = ' + str(Population) + '.')

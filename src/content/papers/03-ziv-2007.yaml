@@ -1,0 +1,9 @@
+n: 3
+authors: "_E Ziv_, I Nemenman, and C Wiggins"
+title: "Optimal signal processing in small stochastic biochemical networks"
+journal: "PLoS ONE"
+citation: "2, e1077, 2007"
+year: 2007
+summary: "Maximizing information transmission through a small, noisy biochemical network determines its kinetic parameters, showing how noise shapes optimal network design."
+doi: "10.1371/journal.pone.0001077"
+directions: ["systems-biology"]  # draft mapping to research pages

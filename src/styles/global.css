@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-paper: #faf8f3;
+  --color-ink: #1d1b18;
+  --color-muted: #6b665d;
+  --color-rule: #e4dfd4;
+  --color-navy: #0c2340;
+  --color-gold: #a67c12; /* darker than the mockup's gold so small text passes contrast */
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern", "liga";
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible { outline: 2px solid var(--color-navy); outline-offset: 2px; }
+}
+
+@utility smallcaps {
+  font-variant: all-small-caps;
+  letter-spacing: 0.06em;
+}
+
+@utility link {
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-rule);
+  text-underline-offset: 4px;
+  &:hover { color: var(--color-navy); text-decoration-color: currentColor; }
+}
+
+/* Long-form text (research pages, old courses, guidance). */
+.prose-lab {
+  @apply prose prose-lg max-w-none font-serif text-ink;
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-links: var(--color-navy);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-quotes: var(--color-ink);
+  --tw-prose-hr: var(--color-rule);
+  --tw-prose-th-borders: var(--color-rule);
+  --tw-prose-td-borders: var(--color-rule);
+}
+.prose-lab :where(h1, h2, h3, h4) { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.01em; }
+.prose-lab :where(a) { text-underline-offset: 3px; }
+.prose-lab :where(code) { font-size: 0.85em; }
+.prose-lab .katex-display { overflow-x: auto; overflow-y: hidden; padding: 0.25em 0; }
+.prose-lab :where(table) { display: block; overflow-x: auto; }
+.prose-lab :where(img) { margin-inline: auto; }

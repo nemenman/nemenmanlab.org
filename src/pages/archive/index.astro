@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import { archiveGroups } from '../../lib/archive';
+import { url } from '../../lib/site';
+
+const { groups } = await archiveGroups();
+const idx = [...groups.values()].map((g) => g.index).filter((x) => x !== undefined)
+  .sort((a, b) => (b.data.year ?? 0) - (a.data.year ?? 0) || (a.data.code ?? '').localeCompare(b.data.code ?? ''));
+const courses = idx.filter((e) => e.data.kind !== 'event');
+const events = idx.filter((e) => e.data.kind === 'event');
+---
+<Base title="Old courses and events" description="Archived course materials and event pages from the Nemenman lab's old wiki.">
+  <PageHeader title="Old courses and events" kicker="Archive" lede="Course materials and event pages carried over from the lab's old wiki (2010–2022), kept as they were." />
+  <section class="mx-auto max-w-6xl px-4 sm:px-6">
+    <h2 class="font-serif text-3xl">Courses</h2>
+    {courses.length === 0 && <p class="mt-4 text-muted">Being converted from the old site.</p>}
+    <ul class="mt-6 divide-y divide-rule border-y border-rule">
+      {courses.map((e) => (
+        <li>
+          <a href={url(`/archive/${e.data.group}/`)} class="group grid gap-1 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6">
+            <span class="smallcaps pt-1 text-sm text-muted">{[e.data.code, e.data.year].filter(Boolean).join(', ')}</span>
+            <span>
+              <span class="font-serif text-xl group-hover:text-navy">{e.data.group_title ?? e.data.title}</span>
+              {e.data.summary && <span class="mt-1 block text-sm text-muted">{e.data.summary}</span>}
+              <span class="mt-1 block text-xs text-muted">{groups.get(e.data.group)!.pages.length} pages</span>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+    {events.length > 0 && (
+      <>
+        <h2 class="mt-16 font-serif text-3xl">Events hosted on the old site</h2>
+        <ul class="mt-6 divide-y divide-rule border-y border-rule">
+          {events.map((e) => (
+            <li>
+              <a href={url(`/archive/${e.data.group}/`)} class="group grid gap-1 py-4 sm:grid-cols-[9rem_1fr] sm:gap-6">
+                <span class="smallcaps pt-1 text-sm text-muted">{e.data.year}</span>
+                <span><span class="font-serif text-xl group-hover:text-navy">{e.data.group_title ?? e.data.title}</span>{e.data.summary && <span class="mt-1 block text-sm text-muted">{e.data.summary}</span>}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        <p class="mt-4 text-sm text-muted">Other conferences and schools we organized are listed in the <a class="link" href={url('/Nemenman_CV.pdf')}>CV</a>.</p>
+      </>
+    )}
+  </section>
+</Base>

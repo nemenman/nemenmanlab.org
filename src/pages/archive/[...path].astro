@@ -1,0 +1,49 @@
+---
+import 'katex/dist/katex.min.css';
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { archiveGroups, archiveRoute, type ArchiveEntry } from '../../lib/archive';
+import { url } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const { all } = await archiveGroups();
+  return all.map((e) => ({ params: { path: archiveRoute(e) }, props: { entry: e } }));
+}
+const { entry } = Astro.props as { entry: ArchiveEntry };
+const { Content } = await render(entry);
+const { groups } = await archiveGroups();
+const g = groups.get(entry.data.group)!;
+const idx = g.index;
+const groupTitle = idx ? [idx.data.code, idx.data.year].filter(Boolean).join(', ') + (idx.data.group_title ? `: ${idx.data.group_title}` : '') : entry.data.group;
+const pos = g.pages.findIndex((p) => p.id === entry.id);
+const prev = pos > 0 ? g.pages[pos - 1] : entry.data.index ? undefined : idx;
+const next = entry.data.index ? g.pages[0] : g.pages[pos + 1];
+const here = archiveRoute(entry);
+---
+<Base title={entry.data.index ? groupTitle : `${entry.data.title} · ${idx?.data.code ?? ''} ${idx?.data.year ?? ''}`.trim()}>
+  <div class="mx-auto max-w-6xl px-4 pt-10 sm:px-6">
+    <p class="smallcaps text-sm text-gold"><a href={url('/archive/')} class="hover:text-ink">Archive</a> · <a href={url(`/archive/${entry.data.group}/`)} class="hover:text-ink">{idx ? [idx.data.code, idx.data.year].filter(Boolean).join(', ') : entry.data.group}</a></p>
+    <div class="mt-4 grid gap-10 lg:grid-cols-12">
+      <article class="min-w-0 lg:col-span-8">
+        <h1 class="font-serif text-3xl leading-tight tracking-tight sm:text-4xl">{entry.data.index ? (idx?.data.group_title ?? entry.data.title) : entry.data.title}</h1>
+        <p class="mt-3 border-b border-rule pb-4 text-sm text-muted">Archived from the old lab wiki. Some external links may no longer work.</p>
+        <div class="prose-lab mt-6"><Content /></div>
+        <nav class="mt-12 flex justify-between gap-6 border-t border-rule pt-4 text-sm" aria-label="Previous and next">
+          <span>{prev && <a class="link" href={url(`/archive/${archiveRoute(prev)}/`)}>← {prev.data.index ? 'Course home' : prev.data.title}</a>}</span>
+          <span class="text-right">{next && <a class="link" href={url(`/archive/${archiveRoute(next)}/`)}>{next.data.title} →</a>}</span>
+        </nav>
+      </article>
+      <aside class="lg:col-span-4">
+        <details class="border border-rule bg-white lg:sticky lg:top-6" open>
+          <summary class="cursor-pointer px-4 py-3 font-serif text-lg">{groupTitle}</summary>
+          <ol class="max-h-[70vh] overflow-y-auto border-t border-rule px-4 py-2 text-sm">
+            {idx && <li><a href={url(`/archive/${entry.data.group}/`)} class:list={['block py-1 hover:text-navy', here === entry.data.group ? 'font-semibold text-navy' : 'text-muted']}>Course home</a></li>}
+            {g.pages.map((p) => (
+              <li><a href={url(`/archive/${archiveRoute(p)}/`)} class:list={['block py-1 hover:text-navy', archiveRoute(p) === here ? 'font-semibold text-navy' : 'text-muted']}>{p.data.title}</a></li>
+            ))}
+          </ol>
+        </details>
+      </aside>
+    </div>
+  </div>
+</Base>

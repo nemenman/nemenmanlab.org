@@ -1,0 +1,16 @@
+c# -*- coding: utf-8 -*-
+"""
+Created on Wed Jan 18 09:03:24 2017
+
+@author: nemenman
+"""
+
+import numpy as np
+
+a = 1
+a == 1
+b = (a != 1)
+
+for a in np.arange(10):
+    print(a)
+    

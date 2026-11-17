@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+// From the CV's appointments (Nov 2026). URLs checked 2026-11-17.
+const emory = [
+  { name: 'Department of Physics', role: 'Samuel Candler Dobbs Professor', url: 'https://physics.emory.edu/' },
+  { name: 'Department of Biology', role: 'Samuel Candler Dobbs Professor', url: 'https://biology.emory.edu/' },
+  { name: 'Initiative in Theory and Modeling of Living Systems (TMLS)', role: 'Director (Co-Director 2017–2022)', url: 'https://livingtheory.emory.edu/' },
+  { name: 'Emory Global Diabetes Research Center', role: 'Member, since 2025', url: 'https://diabetes.emory.edu/' },
+  { name: 'Neuroscience Graduate Program', role: 'Faculty, since 2010', url: 'https://biomed.emory.edu/PROGRAM_SITES/NS/' },
+  { name: 'Population Biology, Ecology, and Evolution Graduate Program', role: 'Faculty, since 2010', url: 'https://biomed.emory.edu/PROGRAM_SITES/PBEE/' },
+];
+const other = [
+  { name: 'Center for Computational Neuroscience, Flatiron Institute, Simons Foundation', role: 'Visiting Scholar, 2026–2027', url: 'https://www.simonsfoundation.org/flatiron/center-for-computational-neuroscience/' },
+];
+---
+<Base title="Affiliations" description="Emory departments, institutes, and graduate programs the Nemenman group belongs to.">
+  <PageHeader title="Affiliations" kicker="Where we belong" />
+  <section class="mx-auto grid max-w-6xl gap-12 px-4 sm:px-6 md:grid-cols-12">
+    <div class="md:col-span-8">
+      <h2 class="font-serif text-3xl">At Emory</h2>
+      <ul class="mt-6 divide-y divide-rule border-y border-rule">
+        {emory.map((a) => (
+          <li class="py-4">
+            <a href={a.url} class="font-serif text-xl leading-snug hover:text-navy">{a.name} <span aria-hidden="true" class="text-muted">↗</span></a>
+            <p class="mt-1 text-sm text-muted">{a.role}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="md:col-span-4">
+      <h2 class="font-serif text-3xl">Elsewhere</h2>
+      <ul class="mt-6 divide-y divide-rule border-y border-rule">
+        {other.map((a) => (
+          <li class="py-4">
+            <a href={a.url} class="font-serif text-xl leading-snug hover:text-navy">{a.name} <span aria-hidden="true" class="text-muted">↗</span></a>
+            <p class="mt-1 text-sm text-muted">{a.role}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>
