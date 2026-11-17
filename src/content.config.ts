@@ -67,7 +67,8 @@ const papers = defineCollection({
     journal: z.string(),
     citation: z.string(), // volume, pages, year
     year: z.number(),
-    summary: z.string(),
+    summary: z.string().optional(), // one-line summary (from the CV for favorites)
+    favorite: z.boolean().default(true), // false = shown only on research pages
     doi: z.string().optional(),
     arxiv: z.string().optional(),
     award: z.string().optional(),

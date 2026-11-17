@@ -5,7 +5,7 @@ import PageHeader from '../components/PageHeader.astro';
 import PaperItem from '../components/PaperItem.astro';
 import { SITE, url } from '../lib/site';
 
-const papers = (await getCollection('papers')).sort((a, b) => b.data.n - a.data.n);
+const papers = (await getCollection('papers')).filter((p) => p.data.favorite).sort((a, b) => b.data.n - a.data.n);
 ---
 <Base title="Publications" description="Favorite papers from the Nemenman group, with a link to the full bibliography on Google Scholar.">
   <PageHeader title="Publications" kicker="Favorite papers" />

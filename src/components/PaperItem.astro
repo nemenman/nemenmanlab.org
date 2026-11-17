@@ -14,7 +14,7 @@ const authors = inlineMd(p.authors).replace(/\bI Nemenman\b/, '<strong class="fo
     {href ? <a href={href} class="hover:text-navy">{p.title}</a> : p.title}
   </h3>
   <p class="mt-1.5 text-sm leading-relaxed text-muted"><span set:html={authors} />. <em>{p.journal}</em> {p.citation}.</p>
-  {!compact && <p class="mt-3 max-w-3xl font-serif text-lg italic leading-snug text-ink/80">{p.summary}</p>}
+  {!compact && p.summary && <p class="mt-3 max-w-3xl font-serif text-lg italic leading-snug text-ink/80">{p.summary}</p>}
   <p class="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
     {p.award && <span class="smallcaps text-gold">{p.award}</span>}
     {p.doi && <a class="link text-muted" href={`https://doi.org/${p.doi}`}>doi:{p.doi}</a>}
