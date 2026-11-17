@@ -9,7 +9,7 @@ order: 20
 
 During these lectures, we will review some basic concepts of probability theory, such as probability distributions, conditionals, marginals, expectations, etc. We will discuss the central limit theorem and will derive some properties of random walks. Finally, we will study some specific useful probability distributions.
 
-A very good introduction to probability theory can be found in [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
+A very good introduction to probability theory can be found in [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
 
 - Random variables: motion of *E. coli*, time to neural action potential; diffusion and first passage
   - Sample space, events, probabilities -- probability space

@@ -18,7 +18,7 @@ The outcome of these discussions is that life for cells is very different from t
 
 ### General notes
 
-There are now two good collections of notes that you can follow for this block of lectures. The first are Chapters 3, 4 from the Nelson's book. Another good introduction to probability theory, one of my favorites, but more on the mathematical side, can be found at [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
+There are now two good collections of notes that you can follow for this block of lectures. The first are Chapters 3, 4 from the Nelson's book. Another good introduction to probability theory, one of my favorites, but more on the mathematical side, can be found at [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
 
 As we discuss probability theory, think of an *E. coli* that moves in a run/tumble strategy, a neuron that fires randomly, or the Luria-Delbruck experiment. All of these should give you a good intuition about the random distributions that we are discussing.
 
@@ -39,7 +39,7 @@ Probabilities satisfy the following properties, which follow from their definiti
 - additivity (for non-disjoint events): $P(A\cup B)=P(A)+P(B)-P(A\cap B)$
 - complementarity $P(not\, A)=1-P(A)$
 
-Good place for a randomness demo is <http://faculty.rhodes.edu/wetzel/random/mainbody.html>. Test yourself -- can you generate a random sequence?
+Good place for a randomness demo is <https://web.archive.org/web/20151221055118/http://faculty.rhodes.edu:80/wetzel/random/mainbody.html>. Test yourself -- can you generate a random sequence?
 
 ### What if we are studying more than one random variable?
 

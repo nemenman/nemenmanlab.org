@@ -16,7 +16,7 @@ Here we start a new module, where we will explore how to model and solve dynamic
     1.  Appending list or arrays instead of pre-allocating arrays -- appending arrays causes creation of new arrays, and then copying numbers, which takes time.
     2.  Doing loops instead of vectorizing your math and operating on arrays -- doing loops causes Python to do type checking of variables at every step of the way, which is costly.
 
-Coding problem for you was: write a function to solve a quadratic equation, and think about how to make it bullet-proof, and give solutions gene if they are complex, or if they are degenerate. [submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+Coding problem for you was: write a function to solve a quadratic equation, and think about how to make it bullet-proof, and give solutions gene if they are complex, or if they are degenerate. submit your work.
 
 Scripts for this Module:
 

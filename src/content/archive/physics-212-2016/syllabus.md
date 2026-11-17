@@ -26,7 +26,7 @@ Computation is one of the pillars of modern science, in addition to experiment a
 
 ### Textbooks
 
-- **Main Textbook**: A Shiflet and G Shiflet, *Introduction to Computational Modeling*, <http://wofford-ecs.org/IntroComputationalScience/>
+- **Main Textbook**: A Shiflet and G Shiflet, *Introduction to Computational Modeling*, <https://web.archive.org/web/20160112192606/http://wofford-ecs.org/IntroComputationalScience/>
 
 - Python Tutorial: J Kinder and P Nelson, *Student Guide to Python for Physical Modeling*, <http://press.princeton.edu/titles/10644.html>
 
@@ -148,7 +148,7 @@ Chapters 9-11, and the Guide to Python, Chapters 5-5.4, 6.
 - Apr 6: Quiz 4
 - *Project report due: Apr 11*
 - Additional notes for this Module:
-  - Do exercises on [this web page](http://faculty.rhodes.edu/wetzel/random/mainbody.html) to get a better feel for random numbers. Were you successful in generating random numbers without the help of a coin?
+  - Do exercises on [this web page](https://web.archive.org/web/20151221055118/http://faculty.rhodes.edu:80/wetzel/random/mainbody.html) to get a better feel for random numbers. Were you successful in generating random numbers without the help of a coin?
   - Think about the following question: I generate digits between 0 and 9 at random, uniformly. I then write them down in a sequence, 6 such random numbers at a time. Are the resulting 6-digit numbers distributed uniformly between 0 and 999,999? Now take a bunch of physical constants, like speed of light, Planck constant, Boltzmann constant, etc. Calculate the frequency of occurrence of digits 0...9 in the numerical values of these constants in the SI units. Are you surprised by the frequency distribution? Can you explain what you see?
 
 **Module 5:** High performance computing

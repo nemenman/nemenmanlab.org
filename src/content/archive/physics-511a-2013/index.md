@@ -179,7 +179,7 @@ In-class problem solving
 
 - [Chapter 1, Volume 8. Electrostatics of conductors](/archive/physics-511a-2013/chapter-1-volume-8-electrostatics-of-conductors/)
   - Sections 1, 2, 3, 5
-  - The following notes may be useful: <http://www.math.umn.edu/~olver/am_/c.pdf>, <http://math.fullerton.edu/mathews/c2003/ElectrostaticsMod.html>
+  - The following notes may be useful: <https://web.archive.org/web/20160328000031/http://www.math.umn.edu:80/~olver/am_/c.pdf>, <http://math.fullerton.edu/mathews/c2003/ElectrostaticsMod.html>
 - [Chapter 2, Volume 8. Electrostatics of dielectrics](/archive/physics-511a-2013/chapter-2-volume-8-electrostatics-of-dielectric/)
   - Sections 6, 7, 9, 10 (only relations for energy/free energy of a field inside a dielectric, Eq. 10.15-10.16), 13. Extra reading -- Sections 17, 19.
 

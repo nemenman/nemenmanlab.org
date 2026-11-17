@@ -193,7 +193,7 @@ The list is far from being complete now. Stay tuned.
 
 1.  R Phillips, J Kondev, J Theriot. *Physical Biology of the Cell* (Garland Science, 2008)
     - *Sizing up E. coli*.
-2.  CM Grinstead and JL Snell, [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html).
+2.  CM Grinstead and JL Snell, [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html).
 3.  W Bialek, [Biophysics: Searching for Principles](http://www.princeton.edu/~wbialek/PHY562.html) (2010).
     - Information theory overview is in chapters [4.1](http://www.princeton.edu/~wbialek/PHY562/4.1.pdf) and [4.2](http://www.princeton.edu/~wbialek/PHY562/4.2.pdf).
     - The question of whether biology cares about bits is reviewed in section [4.3](http://www.princeton.edu/~wbialek/PHY562/4.3.pdf).

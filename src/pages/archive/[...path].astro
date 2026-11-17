@@ -33,16 +33,26 @@ const here = archiveRoute(entry);
           <span class="text-right">{next && <a class="link" href={url(`/archive/${archiveRoute(next)}/`)}>{next.data.title} →</a>}</span>
         </nav>
       </article>
-      <aside class="lg:col-span-4">
-        <details class="border border-rule bg-white lg:sticky lg:top-6" open>
-          <summary class="cursor-pointer px-4 py-3 font-serif text-lg">{groupTitle}</summary>
+      <aside class="order-first lg:order-none lg:col-span-4">
+        <!-- Phones: a collapsed menu above the page. Desktop: an open side menu. -->
+        <details class="border border-rule bg-white lg:hidden">
+          <summary class="cursor-pointer px-4 py-3 text-sm font-medium">Course pages ({g.pages.length + (idx ? 1 : 0)})</summary>
+          <ol class="max-h-[60vh] overflow-y-auto border-t border-rule px-4 py-2 text-sm">
+            {idx && <li><a href={url(`/archive/${entry.data.group}/`)} class:list={['block py-1.5 hover:text-navy', here === entry.data.group ? 'font-semibold text-navy' : 'text-muted']}>Course home</a></li>}
+            {g.pages.map((p) => (
+              <li><a href={url(`/archive/${archiveRoute(p)}/`)} class:list={['block py-1.5 hover:text-navy', archiveRoute(p) === here ? 'font-semibold text-navy' : 'text-muted']}>{p.data.title}</a></li>
+            ))}
+          </ol>
+        </details>
+        <nav class="hidden border border-rule bg-white lg:sticky lg:top-6 lg:block" aria-label="Course pages">
+          <p class="px-4 py-3 font-serif text-lg">{groupTitle}</p>
           <ol class="max-h-[70vh] overflow-y-auto border-t border-rule px-4 py-2 text-sm">
             {idx && <li><a href={url(`/archive/${entry.data.group}/`)} class:list={['block py-1 hover:text-navy', here === entry.data.group ? 'font-semibold text-navy' : 'text-muted']}>Course home</a></li>}
             {g.pages.map((p) => (
               <li><a href={url(`/archive/${archiveRoute(p)}/`)} class:list={['block py-1 hover:text-navy', archiveRoute(p) === here ? 'font-semibold text-navy' : 'text-muted']}>{p.data.title}</a></li>
             ))}
           </ol>
-        </details>
+        </nav>
       </aside>
     </div>
   </div>

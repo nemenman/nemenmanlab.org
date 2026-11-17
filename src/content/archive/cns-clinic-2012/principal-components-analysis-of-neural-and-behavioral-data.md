@@ -7,7 +7,7 @@ order: 50
 
 ## Logistics
 
-**Presenter:** [Sam Sober](http://www.biology.emory.edu/research/Sober/Home.html)
+**Presenter:** [Sam Sober](https://web.archive.org/web/20160108171942/http://www.biology.emory.edu:80/research/Sober/Home.html)
 
 **Date:** Mar 29, 2011
 

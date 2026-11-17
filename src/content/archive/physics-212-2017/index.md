@@ -55,7 +55,7 @@ In addition, a minor goal of the class is to improve the students' ability to co
   - See also [Computational Modeling and Visualization of Physical Systems with Python](http://www.wiley.com/WileyCDA/WileyTitle/productCd-EHEP003413.html) by J Wang and [Computational Physics](http://www.physics.purdue.edu/~hisao/book/) by Giordano and Nakanishi.
   - The bible of scientific computing is [Numerical Recipies](http://numerical.recipes) by Press et al.
 
-- At the end of each class where we do coding, please [submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+- At the end of each class where we do coding, please submit your work.
 
 ## Lecture Notes and Detailed Schedule
 
@@ -166,7 +166,7 @@ Choose and do one of the three projects for this module.
 
 **Project 2:** (hard!) Read about [Milankovitch cycles](https://en.wikipedia.org/wiki/Milankovitch_cycles). Let's try to reproduce them. Build and implement a model of the Solar system, which includes the Sun, the Earth, Jupiter. Find the parameters of the orbits online. Use odeint in SciPy to integrate the system for a million years. Integrating over a million years with a good temporal resolution could be hard, so maybe break a million years into shorter blocks, and then glue the blocks back together. Watch the Earth perihelion, aphelion, and mean distance from the sun, axial tilt (plot the values every hundred years)? Can you reproduce the figures in the link above? Consider adding Saturn to your model.
 
-**Project 3:** Write a model for a linearly damped pendulum with periodic driving force $A \cos \omega t$. Read discussion of [driven pendula](http://www.phy.davidson.edu/StuHome/chgreene/chaos/Pendulum/pendulum_content_frame.htm). A chaotic pendulum is a pendulum, for which two trajectories that start from nearly the same initial condition diverge quickly. Explore under which conditions this pendulum is periodic or chaotic. Plot the phase space of the model. Use odeint from SciPy and also write your own integrator. Compare results.
+**Project 3:** Write a model for a linearly damped pendulum with periodic driving force $A \cos \omega t$. Read discussion of [driven pendula](https://web.archive.org/web/20150709094600/http://www.phy.davidson.edu:80/StuHome/chgreene/chaos/Pendulum/pendulum_content_frame.htm). A chaotic pendulum is a pendulum, for which two trajectories that start from nearly the same initial condition diverge quickly. Explore under which conditions this pendulum is periodic or chaotic. Plot the phase space of the model. Use odeint from SciPy and also write your own integrator. Compare results.
 
 ### Class Module 3
 
@@ -223,12 +223,12 @@ Belousov-Zhabotinsky reaction is a classic example of a nonlinear chemical oscil
 
 ## Quizzes
 
-**[Module 1 Quiz](https://docs.google.com/forms/d/e/1FAIpQLSdl_HwZ3mDF_XsAUaUX2iYWmHxHrC_H5kLRin4BW5h1rAPKJw/viewform) (Feb 1, 2017)**
+**Module 1 Quiz (Feb 1, 2017)**
 
-**[Module 2 Quiz](https://docs.google.com/forms/d/e/1FAIpQLSf1KSUL0BBD4M4QHzVtBgN_APQZxWN1LTRXeZ0beE-8YlazCg/viewform) (Feb 20, 2017)**
+**Module 2 Quiz (Feb 20, 2017)**
 
-**[Module 3 Quiz](https://docs.google.com/forms/d/e/1FAIpQLSdZj66GaY9s47Toxq7QZmrFx6HQg8Zuv2Y4ilx39yaCceya4w/viewform) (Mar 20, 2017)**
+**Module 3 Quiz (Mar 20, 2017)**
 
-**[Module 4 Quiz](https://docs.google.com/forms/d/e/1FAIpQLSc7Bdip1OuoNjgLAY_BJM2wDZwLZVXCH8u0FKa-rmdfdhBVVQ/viewform) (Apr 5, 2017)**
+**Module 4 Quiz (Apr 5, 2017)**
 
-**[Module 5 Quiz](https://docs.google.com/forms/d/e/1FAIpQLSfYY0_EetCkt8ZXsNgn9X34U4DE_LSmhgRf4A-pQaO0GI3wHg/viewform) (Apr 24, 2017)**
+**Module 5 Quiz (Apr 24, 2017)**

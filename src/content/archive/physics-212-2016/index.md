@@ -40,7 +40,7 @@ Computation is one of the pillars of modern science, in addition to experiment a
 
 - Weekly office hours: Monday, 4:00-5:00, subject to change
 
-- **Main Textbook**: A Shiflet and G Shiflet, *Introduction to Computational Modeling*, <http://wofford-ecs.org/IntroComputationalScience/>
+- **Main Textbook**: A Shiflet and G Shiflet, *Introduction to Computational Modeling*, <https://web.archive.org/web/20160112192606/http://wofford-ecs.org/IntroComputationalScience/>
 
 - Python Tutorial: J Kinder and P Nelson, *Student Guide to Python for Physical Modeling*, <http://press.princeton.edu/titles/10644.html>
 
@@ -133,7 +133,7 @@ Read about [Milankovitch cycles](https://en.wikipedia.org/wiki/Milankovitch_cycl
 
 **Book Module 3.3, Project 2**
 
-Write a model for a linearly damped pendulum with periodic driving force $A \cos \omega t$. Read discussion of [driven pendula](http://www.phy.davidson.edu/StuHome/chgreene/chaos/Pendulum/pendulum_content_frame.htm). A chaotic pendulum is a pendulum, for which two trajectories that start from nearly the same initial condition diverge quickly. Explore under which conditions this pendulum is periodic or chaotic. Use odeint from SciPy and also write your own Euler integrator. Compare results.
+Write a model for a linearly damped pendulum with periodic driving force $A \cos \omega t$. Read discussion of [driven pendula](https://web.archive.org/web/20150709094600/http://www.phy.davidson.edu:80/StuHome/chgreene/chaos/Pendulum/pendulum_content_frame.htm). A chaotic pendulum is a pendulum, for which two trajectories that start from nearly the same initial condition diverge quickly. Explore under which conditions this pendulum is periodic or chaotic. Use odeint from SciPy and also write your own Euler integrator. Compare results.
 
 **Book Module 3.4, Project 3**
 

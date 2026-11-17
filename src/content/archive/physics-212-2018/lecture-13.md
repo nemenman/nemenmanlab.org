@@ -21,4 +21,4 @@ In the class lectures for this module, we will talk about the following methods:
 
 **Your turn:** Write down a parabolic interpolation or Newton method minimizer of 1-d functions. Minimize a ${\rm cosh} x$ using your minimizer. Do you get the expected result?
 
-- [Submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+- Submit your work.

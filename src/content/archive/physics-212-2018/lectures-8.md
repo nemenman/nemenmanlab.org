@@ -11,4 +11,4 @@ We then will talk about Runge-Kutta methods of solving differential equations. I
 
 You will write a different differential equation and will solve it, to show that Runge-Kutta 2 has error $O(dt^2)$, and the scaling of the error is not a scaling due to the equation being solved, but largely due to the methods used to solve it.
 
-Please [submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+Please submit your work.

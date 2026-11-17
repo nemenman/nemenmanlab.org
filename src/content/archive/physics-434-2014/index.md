@@ -73,7 +73,7 @@ The list is far from being complete now. Stay tuned.
 1.  P Nelson, [Physical Modeling of Living Systems](http://www.physics.upenn.edu/biophys/PMLS/index.html), WH Freeman, Dec 2014
 2.  R Phillips, J Kondev, J Theriot. *Physical Biology of the Cell* (Garland Science, 2008)
     - *Sizing up E. coli*.
-3.  CM Grinstead and JL Snell, [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html).
+3.  CM Grinstead and JL Snell, [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html).
 4.  W Bialek, [Biophysics: Searching for Principles](http://www.princeton.edu/~wbialek/PHY562.html) (2011).
     - Information theory overview is in [Chapter 4](http://www.princeton.edu/~wbialek/PHY562/4.pdf).
 5.  For information about Wiener processes and diffusion, a good source is: [Wiener Process article in Wikipedia](http://en.wikipedia.org/wiki/Wiener_process).

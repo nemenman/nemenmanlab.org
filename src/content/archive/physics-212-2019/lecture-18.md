@@ -7,7 +7,7 @@ order: 190
 
 ### General notes
 
-A good introduction to probability theory, one of my favorites, but more on the mathematical side, can be found at [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell. Follow the [Random Numbers](/archive/files/RandomNumbers.txt) notebook in this lecture.
+A good introduction to probability theory, one of my favorites, but more on the mathematical side, can be found at [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell. Follow the [Random Numbers](/archive/files/RandomNumbers.txt) notebook in this lecture.
 
 ### Why do we need random numbers?
 
@@ -43,7 +43,7 @@ We can also now formalize the intuitive concept of dependence among variables. T
 
 ### How easy is it to generate random numbers?
 
-- Do exercises on [this web page](http://faculty.rhodes.edu/wetzel/random/mainbody.html) to get a better feel for random numbers. Were you successful in generating random numbers without the help of a coin?
+- Do exercises on [this web page](https://web.archive.org/web/20151221055118/http://faculty.rhodes.edu:80/wetzel/random/mainbody.html) to get a better feel for random numbers. Were you successful in generating random numbers without the help of a coin?
 - Linear congruential method for generating random numbers. See <http://apps.nrbook.com/c/index.html>, Chapter 7.1 for details.
 - Many standard systems use: multiplier = 7\*\*5, modulus = 2\*\*31-1, increment = 0
 

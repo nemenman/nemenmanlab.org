@@ -34,7 +34,7 @@ In this lecture, we continue learning the basics of computational modeling and P
 
   **Your work:** plot sin(x) for x between 0 and pi. Only plot the positive part of the vertical axis. Label axes.
 
-[Submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+Submit your work.
 
 ## Our simplest model
 

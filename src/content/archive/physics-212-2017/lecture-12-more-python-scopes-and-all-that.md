@@ -12,4 +12,4 @@ You will need the following files:
 
 - [Muscle data](/archive/files/F_emg.txt), which you will use for loading and plotting, rename this file with an extension csv;
 - [Lecture notebook](/archive/files/Module3.txt), rename this with an extension zip and then unzip it.
-- [Submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+- Submit your work.

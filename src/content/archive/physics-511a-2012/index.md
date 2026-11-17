@@ -180,7 +180,7 @@ We will cover the following book chapter in class. I will originally aim to cove
 [Chapter 1, Volume 8. Electrostatics of conductors](/archive/physics-511a-2012/chapter-1-volume-8-electrostatics-of-conductors/)
 
 - Sections 1, 2, 3, 5
-- The following notes may be useful: <http://www.math.umn.edu/~olver/am_/c.pdf>
+- The following notes may be useful: <https://web.archive.org/web/20160328000031/http://www.math.umn.edu:80/~olver/am_/c.pdf>
 
 **Apr 17**
 

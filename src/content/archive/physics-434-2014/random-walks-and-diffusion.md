@@ -5,7 +5,7 @@ wiki_title: "Physics 434, 2014: Random walks and diffusion"
 order: 70
 ---
 
-In these lectures, we are focusing on random walks and diffusion -- the two related fundamental processes underlying much of stochastic information processing in biology. While Nelson's book largely skips these subjects, other books that we have used have great section on random walks. See, for example, [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell. Another, more physics-like book on the subject that I recommend is "Random Walks in Biology" by H. Berg.
+In these lectures, we are focusing on random walks and diffusion -- the two related fundamental processes underlying much of stochastic information processing in biology. While Nelson's book largely skips these subjects, other books that we have used have great section on random walks. See, for example, [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell. Another, more physics-like book on the subject that I recommend is "Random Walks in Biology" by H. Berg.
 
 #### Warmup questions
 

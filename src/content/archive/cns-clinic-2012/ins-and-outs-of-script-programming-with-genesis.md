@@ -7,7 +7,7 @@ order: 30
 
 ## Logistics
 
-**Presenter:** [Dieter Jaeger](http://www.biology.emory.edu/research/Jaeger/)
+**Presenter:** [Dieter Jaeger](https://web.archive.org/web/20160103143629/http://www.biology.emory.edu:80/research/Jaeger/)
 
 **Date:** Feb 23, 2011
 

@@ -247,7 +247,7 @@ Below are some of the papers we will be mentioning in class. Projects will be ba
 
 1.  R Phillips, J Kondev, J Theriot. *Physical Biology of the Cell* (Garland Science, 2008)
     - *Sizing up E. coli*.
-2.  CM Grinstead and JL Snell, [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html).
+2.  CM Grinstead and JL Snell, [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html).
 3.  W Bialek, [Biophysics: Searching for Principles](http://www.princeton.edu/~wbialek/PHY562.html) (2011).
     - Information theory overview is in [Chapter 4](http://www.princeton.edu/~wbialek/PHY562/4.pdf).
 4.  For information about Wiener processes and diffusion, a good source is: [Wiener Process article in Wikipedia](http://en.wikipedia.org/wiki/Wiener_process).

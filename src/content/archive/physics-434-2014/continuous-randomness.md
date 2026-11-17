@@ -9,7 +9,7 @@ order: 50
 
 In these lectures, we are extending our ideas of randomness from discrete to continuous variables. After introducing basic concepts, we study some specific useful probability distributions. In the course of this whole lecture block, we should be thinking about *E. coli* chemotaxis in the background -- all of these concepts will be applicable, when answering questions like: What is the duration of a single run? How far away would the *E. coli* move after many runs? etc.
 
-Here we are largely following Chapter 5 in the Nelson's book. However, an additional very good introduction to probability theory can be found in [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
+Here we are largely following Chapter 5 in the Nelson's book. However, an additional very good introduction to probability theory can be found in [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
 
 Since there are good books to follow here, the notes are not very detailed.
 

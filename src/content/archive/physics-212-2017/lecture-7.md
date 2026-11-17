@@ -31,4 +31,4 @@ Here we start a new module, where we will explore how to model and solve dynamic
     - [Integrators](/archive/files/Integrators_v2.txt) -- module defining different integrators (Euler and Runge-Kutta second order).
     - [Module 2](/archive/files/Module2_v2.txt) -- catch-all scripts I used during the class.
 
-I also asked you to show that the numerical error is dependent largely (but not fully) on the solving method, not the equation being solved. For this you needed to define a different growth function, solvee the growth equation, and [submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+I also asked you to show that the numerical error is dependent largely (but not fully) on the solving method, not the equation being solved. For this you needed to define a different growth function, solvee the growth equation, and submit your work.

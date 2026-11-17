@@ -171,7 +171,7 @@ In (roughly) chronological order. Notice that **not all** of these pieces will b
 
 - L Carroll, [Sylvie and Bruno Concluded. Chapter 11: The Man in The Moon](http://etc.usf.edu/lit2go/211/sylvie-and-bruno-concluded/4652/chapter-11-the-man-in-the-moon/) (see passage about the pocket map), 1893.
 - A Rosenblueth and N Wiener, The Role of Models in Science, *Philosophy of Science* **12**:316, 1945.
-- JL Borges, [Of Exactitude in Science](http://www.digiovanni.co.uk/borges/the-maker/of-exactitude-in-science.htm), translated by NT di Giovanni, 1946.
+- JL Borges, [Of Exactitude in Science](https://web.archive.org/web/20130212200026/http://www.digiovanni.co.uk/borges/the-maker/of-exactitude-in-science.htm), translated by NT di Giovanni, 1946.
 - K Popper, Science: Conjectures and Refutations, Lecture at Peterhouse, Cambridge, 1953. *Removed due to copyright request*.
 - CP Snow, *The Two Cultures and The Scientific Revolution*, Cambridge UP, 1959.
 - EP Wigner, The Unreasonable Effectiveness of Mathematics in the Natural Sciences, *Communications on Pure and Applied Mathematics* **13**:1, 1960.
@@ -186,7 +186,7 @@ In (roughly) chronological order. Notice that **not all** of these pieces will b
 - RP Feynman, [Cargo Cult Science](http://neurotheory.columbia.edu/~ken/cargo_cult.html), 1974.
 - KG Wilson, Problems in Physics with Many Scales of Length, *Scientific American* **241**:140, 1979.
 - RP Feynman, [The pleasure of finding things out](https://www.youtube.com/watch?v=FXiOg5-l3fk), BBC/PBS Interview, 1981.
-- R Hamming, You And Your Research, [Bell Communications Research Colloquium Seminar](http://www.cs.virginia.edu/~robins/YouAndYourResearch.html), 1986.
+- R Hamming, You And Your Research, [Bell Communications Research Colloquium Seminar](https://web.archive.org/web/20151230154952/http://www.cs.virginia.edu:80/~robins/YouAndYourResearch.html), 1986.
 - N Goldenfeld and LP Kadanoff, Simple lessons from complexity, *Science* **284**:87, 1999.
 - Y Lazebnik, Can a Biologist Fix a Radio? —or, What I Learned while Studying Apoptosis. *Biochemistry (Moscow)* **69**(12):1403, 2002.
 - K Kording and D Wolpert, Bayesian integration in sensorimotor learning. *Nature* **427**:244, 2004.
@@ -203,9 +203,9 @@ In (roughly) chronological order. Notice that **not all** of these pieces will b
 And some additional reading for those who want to venture farther.
 
 - Mathematical universe hypothesis: M Tegmark, [Our Mathematical Universe: My Quest for the Ultimate Nature of Reality](http://books.google.com/books/about/Our_Mathematical_Universe.html?id=MHufngEACAAJ), Knopf, 2014.
-  - See also a critical review by [Peter Woit](http://www.math.columbia.edu/~woit/wordpress/?p=6551).
+  - See also a critical review by [Peter Woit](https://web.archive.org/web/20151224160942/http://www.math.columbia.edu/~woit/wordpress/?p=6551).
 - S Wolfram, [A new kind of science](http://books.google.com/books/about/New_Kind_of_Science.html?id=UvqpAAAACAAJ), Wolfram Media, 2002.
-  - See also critical reviews by [Cosma Shalizi](http://vserver1.cscs.lsa.umich.edu/~crshalizi/reviews/wolfram/), and [myself](http://online.kitp.ucsb.edu/online/colloq/nemenman2/).
+  - See also critical reviews by [Cosma Shalizi](https://web.archive.org/web/20141228010336/http://vserver1.cscs.lsa.umich.edu:80/~crshalizi/reviews/wolfram/), and [myself](https://web.archive.org/web/20180126073912/http://online.kitp.ucsb.edu:80/online/colloq/nemenman2/).
 
 And some encyclopedia articles:
 

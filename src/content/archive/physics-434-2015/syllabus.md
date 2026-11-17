@@ -28,7 +28,7 @@ This class is aimed to teach you to think physically about biological systems. T
 
 We will additionally rely on the following books, and I suggest you borrow them from the library or from me, and read before bedtime.
 
-1.  Introduction to Probability, by CM Grinstead and JL Snell. Available at <http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html>
+1.  Introduction to Probability, by CM Grinstead and JL Snell. Available at <https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html>
 2.  Physical Biology of the Cell by R Phillips, J Kondev, J Theriot (Garland Science, 2008)
 3.  Biological Physics: Energy, Information, Life by P Nelson (W.H. Freeman, 2003)
 4.  Biophysics: Searching for Principles, by W Bialek, available at <http://www.princeton.edu/~wbialek/PHY562.html>

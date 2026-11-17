@@ -231,7 +231,7 @@ Midterm 2, chapters 6, 7, 8, 9.
 
 - Midterm 2 solutions
 - [Chapter 1, Volume 8. Electrostatics of conductors](/archive/physics-511a-2014/chapter-1-volume-8-electrostatics-of-conductors/)
-  - The following notes may be useful: <http://www.math.umn.edu/~olver/am_/c.pdf>, <http://math.fullerton.edu/mathews/c2003/ElectrostaticsMod.html>
+  - The following notes may be useful: <https://web.archive.org/web/20160328000031/http://www.math.umn.edu:80/~olver/am_/c.pdf>, <http://math.fullerton.edu/mathews/c2003/ElectrostaticsMod.html>
   - Sections 1, 2, 3, 5
 
 **Apr 8 -- student teaching**

@@ -19,7 +19,7 @@ During these lectures, we will review some basic concepts of probability theory,
 
 ### Main Lecture
 
-A very good introduction to probability theory can be found in [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
+A very good introduction to probability theory can be found in [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
 
 As we discuss probability theory, think of an *E. coli* that moves in a run/tumble strategy.
 

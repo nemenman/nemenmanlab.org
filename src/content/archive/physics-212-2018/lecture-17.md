@@ -11,4 +11,4 @@ Your work:
 
 - Take your code from Project 2, choose parameters for the dynamics, and generate a 1-d (theta or prey) trajectory of a length that is longer than a single period. Make sure to not start on the limit cycle.
 - Fit this data using curve_fit.
-- [Submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+- Submit your work.

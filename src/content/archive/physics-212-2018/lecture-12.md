@@ -29,6 +29,6 @@ Regression is the simplest, linear example of optimization. We will start with i
 
 **Your turn:** Look up the predicted maximum temperature for the next ten days online and build a linear regression model of what the temperature will be on day 11 using zeroth order, linear, quadratic, and cubic polynomial model.
 
-- [Submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+- Submit your work.
 
 Module 3 -- the scripts I showed in class.

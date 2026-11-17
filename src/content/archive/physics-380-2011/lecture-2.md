@@ -12,7 +12,7 @@ During these lectures, we will review some basic concepts of probability theory,
 1.  Is one photon a lot for a human or not? Let's estimate how many photons we get per photoreceptor per behavioral time scale.
 2.  We discussed *E. coli* swimming last time. Let's watch a demo. A question is: how does the spiral motion propel the bug? In other words: how will a tilted bar fall in corn syrup?
 
-A very good introduction to probability theory can be found in [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
+A very good introduction to probability theory can be found in [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
 
 - Random variables: motion of *E. coli*, time to neural action potential; diffusion and first passage
   - Sample space, events, probabilities -- probability space

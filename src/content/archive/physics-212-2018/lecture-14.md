@@ -14,4 +14,4 @@ You will need the following files:
 
 Your work: take your codes from modules 1, 2 and restructure it to use in a Jupiter notebook.
 
-- [Submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+- Submit your work.

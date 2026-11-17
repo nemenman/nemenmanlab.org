@@ -55,7 +55,7 @@ In addition, a minor goal of the class is to improve the students' ability to co
   - See also [Computational Modeling and Visualization of Physical Systems with Python](http://www.wiley.com/WileyCDA/WileyTitle/productCd-EHEP003413.html) by J Wang and [Computational Physics](http://www.physics.purdue.edu/~hisao/book/) by Giordano and Nakanishi.
   - The bible of scientific computing is [Numerical Recipies](http://numerical.recipes) by Press et al.
 
-- At the end of each class where we do coding, please [submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+- At the end of each class where we do coding, please submit your work.
 
 ## Lecture Notes and Detailed Schedule
 
@@ -69,12 +69,12 @@ In addition, a minor goal of the class is to improve the students' ability to co
 - **Jan 22**, [Lecture 1](/archive/physics-212-2018/lecture-1/), Introduction, and beginning of [Lecture 3](/archive/physics-212-2018/lecture-3/), Introduction to the Modeling Process. *Reading*: Chapter 1 of the Python Student Guide. Intro to Python.
 - **Jan 24**, [Lecture 2](/archive/physics-212-2018/lecture-2/), Basics of Python, and continuing [Lecture 3](/archive/physics-212-2018/lecture-3/) (if time permits), Introduction to the Modeling Process.
 - Labs 1, Jan 25-26: Chapter 1 of the Python Student Guide; installing Anaconda. Chapter 2 of the Python Student Guide.
-- **Jan 29**, [Lecture 2](/archive/physics-212-2018/lecture-2/). Chapters 2 and 3 in Python Student Guide. Continuing Basics of Python. **Don't forget to [submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform) at the end of the class.**
+- **Jan 29**, [Lecture 2](/archive/physics-212-2018/lecture-2/). Chapters 2 and 3 in Python Student Guide. Continuing Basics of Python. **Don't forget to submit your work at the end of the class.**
 - **Jan 31**, [Lecture 4](/archive/physics-212-2018/lectures-4/): More on Python: loops, branching, slicing. Chapters 2 and 3 in Python Student Guide. [Lecture 3](/archive/physics-212-2018/lecture-3/) The simplest model -- linear (aka, exponential) growth.
 - Labs 2, Feb 1-2: Chapter 2, 3 of the Python Student Guide, and choose your projects and start coding them
 - **Feb 5**, Lecture 5. Finishing with [Lecture 4](/archive/physics-212-2018/lectures-4/) material: More on Python: loops, branching, slicing. Chapters 3 and 4.3 in Python Student Guide. Finally, the quiz.
 
-**Don't forget to [submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform) at the end of the class.**
+**Don't forget to submit your work at the end of the class.**
 
 Scripts for this Module:
 
@@ -171,7 +171,7 @@ Choose and do one of the three projects for this module.
 
 **Project 2:** (hard! talk to me before choosing this) Read about [Milankovitch cycles](https://en.wikipedia.org/wiki/Milankovitch_cycles). Let's try to reproduce them. Build and implement a model of the Solar system, which includes the Sun, the Earth, Jupiter. Find the parameters of the orbits online. Use odeint in SciPy to integrate the system for a million years. Integrating over a million years with a good temporal resolution could be hard, so maybe break a million years into shorter blocks, and then glue the blocks back together. Watch the Earth perihelion, aphelion, and mean distance from the sun, axial tilt (plot the values every hundred years)? Can you reproduce the figures in the link above? Consider adding Saturn to your model.
 
-**Project 3:** Write a model for a linearly damped pendulum with periodic driving force $A \cos \omega t$. Read discussion of [driven pendula](http://www.phy.davidson.edu/StuHome/chgreene/chaos/Pendulum/pendulum_content_frame.htm). A chaotic pendulum is a pendulum, for which two trajectories that start from nearly the same initial condition diverge quickly. Explore under which conditions this pendulum is periodic or chaotic. Plot the phase space of the model. Use odeint from SciPy and also write your own integrator. Compare results.
+**Project 3:** Write a model for a linearly damped pendulum with periodic driving force $A \cos \omega t$. Read discussion of [driven pendula](https://web.archive.org/web/20150709094600/http://www.phy.davidson.edu:80/StuHome/chgreene/chaos/Pendulum/pendulum_content_frame.htm). A chaotic pendulum is a pendulum, for which two trajectories that start from nearly the same initial condition diverge quickly. Explore under which conditions this pendulum is periodic or chaotic. Plot the phase space of the model. Use odeint from SciPy and also write your own integrator. Compare results.
 
 ### Class Module 3
 
@@ -230,20 +230,20 @@ Belousov-Zhabotinsky reaction is a classic example of a nonlinear chemical oscil
 
 **Quiz 1**
 
-Feb 5. [Follow this link](https://docs.google.com/forms/d/10yAW8zYbJNYYLtrNdO6TOiti592tl-h6dGfIa27EDgk).
+Feb 5. Follow this link.
 
 **Quiz 2**
 
-Feb 26. [Follow this link](https://docs.google.com/forms/d/e/1FAIpQLSf1KSUL0BBD4M4QHzVtBgN_APQZxWN1LTRXeZ0beE-8YlazCg/viewform).
+Feb 26. Follow this link.
 
 **Quiz 3**
 
-Mar 26. [Follow this link](https://docs.google.com/forms/d/e/1FAIpQLSdOZxa1s4q8QAYWBXVMG7SbQsnJInRnuuA-X4tjUvIS2wm5-A/viewform).
+Mar 26. Follow this link.
 
 **Quiz 4**
 
-Apr 16. [Follow this link](https://docs.google.com/forms/d/e/1FAIpQLSdHF2ZqExG7xhLCuvT3QOVT9P8eKUkGnnjp1zzWrN9vlRbPLw/viewform).
+Apr 16. Follow this link.
 
 **Quiz 5**
 
-Apr 30. [Follow this link](https://docs.google.com/forms/d/e/1FAIpQLSeiYBG2Ck6aGg1siZgX3IInAphTqt2e3Je5x-VEpWYpp-EbHg/viewform).
+Apr 30. Follow this link.

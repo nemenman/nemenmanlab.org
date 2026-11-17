@@ -7,7 +7,7 @@ order: 80
 
 Today we are discussing random walks in biology, which we introduced during the previous lecture.
 
-The book that we used to study probability has a great section on random walks: see [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell. Another, more physics-like book on the subject that I recommend is "Random Walks in Biology" by H. Berg.
+The book that we used to study probability has a great section on random walks: see [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell. Another, more physics-like book on the subject that I recommend is "Random Walks in Biology" by H. Berg.
 
 #### Warmup question
 

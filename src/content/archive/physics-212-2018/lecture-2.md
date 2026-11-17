@@ -57,4 +57,4 @@ We will solve a quadratic equation a\*x\*\*2+b\*x+c=0 for a=1, b=2, c=-3. Do thi
 
 Evaluate a binary log (log base 2) of a number 42 using at least three different sets of commands. Verify your result by taking 2 to the appropriate power and seeing if you get 42 back.
 
-**Don't forget to [submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform) at the end of the class.**
+**Don't forget to submit your work at the end of the class.**

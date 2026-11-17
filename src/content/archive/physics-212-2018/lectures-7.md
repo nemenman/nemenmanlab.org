@@ -11,4 +11,4 @@ Let's focus for now on a system of a single differential equation, like the cons
 
 Your own work: use the scripts I provided and change them to solve a quadratic equation. Compare the solution to the output of a function that gives an exact solution, which you wrote last time. Verify that different roots can be obtained using different initial conditions. Then use the scripts to solve an equation $e^x-ax=0$ for arbitrary $a$
 
-Please [submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+Please submit your work.

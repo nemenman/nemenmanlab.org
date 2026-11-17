@@ -39,4 +39,4 @@ To understand how these emerge, we need first to understand how real numbers are
   - In general, don't assume that distributive or associative properties are satisfied on a computer.
   - Don't compare floating point numbers exactly. Compare them to a certain precision. Your work: write a function that compares if two floating point numbers are equal to a given relative precision (determined by the number with the smallest absolute value).
 
-Please [submit your work](https://docs.google.com/forms/d/e/1FAIpQLSeNvrPddCgvMfHdlSA8uYDddBFqLK81Rrr4l7jfozud6J7iww/viewform).
+Please submit your work.

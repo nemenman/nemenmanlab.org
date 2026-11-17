@@ -7,7 +7,7 @@ order: 40
 
 ## Logistics
 
-**Presenter:** [Joseph Manns](http://psychology.emory.edu/nab/manns/index.html)
+**Presenter:** [Joseph Manns](https://web.archive.org/web/20151015131024/http://psychology.emory.edu/nab/manns/index.html)
 
 **Date:** Mar 8, 2011
 

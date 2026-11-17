@@ -15,8 +15,7 @@ summary: "In this course, various computational modeling methods will be introdu
 
 - Welcome to the class!
 - New sections are being added to the syllabus to account for the virtual learning we are switching to due to COVID-19.
-- Class will meet virtually at the usual time at the following Zoom link <https://emory.zoom.us/j/117775655>
-- Office hours will meet virtually at the usual time at the following Zoom link <https://emory.zoom.us/j/354960837>
+- Class and office hours met virtually on Zoom. Meeting links and recordings were for enrolled students and are not included in this archive.
 
 ## About the class
 
@@ -135,22 +134,11 @@ Do all exercises in the [Module 3, Progress Report 2](https://github.com/EmoryUn
 
 **Class 03/23:** Finish reading the *Optimization* notebook (including the projects), respond to the questionnaire, and start thinking about the projects.
 
-**Class 03/25:** No pre-class questionnaire. Read notebooks and prepare for midterm. Come with questions that you think will help you during the exam.\]
+**Class 03/25:** No pre-class questionnaire. Read notebooks and prepare for midterm. Come with questions that you think will help you during the exam.
 
 **Labs 9, Mar 26-27, virtual**
 
 Work on the final projects for Module 3.
-
-**Recordings:**
-
-- [Office hour 03/20](https://emory.zoom.us/rec/play/u5Iof7_8_Tw3H9aSsASDA6N8W9Tve_-s13Ue-qAPnU28AXMFZFSnYrFAZbHFoQYAeRhHlWxXGsByfRjW)
-- [Class 03/23](https://emory.zoom.us/rec/share/5uZkF77P3yRIaKvV2E6HR606MoHIT6a8gSIbq_VezEdJ2dk8WSmXsokp1Fe8tXnG)
-- [Office hour 03/23](https://emory.zoom.us/rec/share/-vxWH5zP6VpLZZHg133ZSIc7JrTmeaa803NK-fQEz0aHObs9MIPf-iW3jQtSEXrf)
-- [Class 03/25](https://emory.zoom.us/rec/share/9MBaE5uozD5LZJHG7B7PVPM4BKPJeaa8gXQZ-_UMxE89BjYJlaKdu5AHM1OURzjR)
-- [Emma's 3/27 office hour](https://emory.zoom.us/rec/play/uJB7JOyt-m43H4eVsQSDBPN4W9Xseqqs0yZN-_sKzxvmAnQDZlSuNOcUMLYS09NVpSnJOnKBeBow-rid?continueMode=true&_x_zm_rtaid=syMDeQ7KS3-CvJvysEvNIw.1585507078959.3a287e81dc6c0c0ff1ac3b19db7c61a8&_x_zm_rhtaid=630)
-- [Emma's 3/27 lab](https://emory.zoom.us/rec/share/5PMlJI-sqmxITYnT9mLQSvUmJNX1X6a8hHMa-_MIxE66vqwLCCuCmaojCE-0uZif)
-- [Qihan's 3/26 lab](https://emory.zoom.us/rec/play/vpUoJuGvpz43G9OWuASDVqUsW9S9LK6s2ykcq6UKyBy2ByRQOlvyZuMaZOq9i9O-Wjo3z8Sa3vUJ1O_q?continueMode=true&_x_zm_rtaid=j42h_PZnQyqtSUUBBj-rhw.1585412206604.9561bb0b6bfa526cc4bdfebeb57b9a8d&_x_zm_rhtaid=675)
-- [Office hour 03/30](https://emory.zoom.us/rec/share/1_R6H-7y2GNIWa_28Uz6YJYtOb3pT6a80yQY86Bez0vJ6Z5vVpt5oyBQt6qbWjsT)
 
 ### Module 4: Stochastic simulations
 
@@ -172,24 +160,6 @@ Do all exercises in the [Module 4, Progress Report 2](https://github.com/EmoryUn
 
 **Class 04/13:** Read the 'Stochastic simulations' notebook, 'Projects' section, and understand the projects. Do the appropriate questionnaire.
 
-**Recordings**
-
-- [Class 03/30](https://emory.zoom.us/rec/share/6_5FNZHK62JISYHI-lzPZ7AtNbjceaa80yRI_KEEyUtVO46NLqj86l7vuj48sIlo)
-- [Office hour 03/30](https://emory.zoom.us/rec/share/1_R6H-7y2GNIWa_28Uz6YJYtOb3pT6a80yQY86Bez0vJ6Z5vVpt5oyBQt6qbWjsT)
-- [Class 04/01](https://emory.zoom.us/rec/share/xfwvMezN7URIYbPr6Eb9C_cjN9rBaaa8higWqaBczMi4O-mUuot9cxgk3c11piI)
-- [Qihan's office hour](https://emory.zoom.us/rec/share/4OVXHu_VzVJLQKPz0WzHc_EtNKX0T6a82igcr_oEnU6RPKA11Wb8olhMmbKcqyTV)
-- [Lab 04/02](https://emory.zoom.us/rec/share/7PRENu7W7nhIHo3nq1_8VIh4Lpr9T6a8hykdqadbyhqCmFR-R1c6cq0jki9-20Ev)
-- [Lab 04/03](https://emory.zoom.us/rec/share/7JFzderh1kRLa53_xl3gB_4uFb71aaa8gSJI-PQImBpwukz_iUM_LTE7nhJruxgx)
-- [Class 04/06](https://emory.zoom.us/rec/share/6_ZvEpvhxH5OXq-cuB3SUPd6LoXdX6a81CZPqftcyR3s5JISvsSXmI6TL0MJuR47)
-- [Class 04/08](https://emory.zoom.us/rec/share/tO1IAprWrFhJH9bt1mrQCqkCBZ_feaa81SgX8qVZyxlMpmszxHiv82jtWPZHHDpG)
-- [Qihan's 04/09 Lab](https://emory.zoom.us/rec/share/wPx3C5Ws6GJOYIHs9mDiQ7ImR6jDX6a80yFI-PAKy0sPn92fcwlTjU7qsZ3p-kof)
-- [Emma's 04/10 Office Hour](https://emory.zoom.us/rec/share/zvBMMpf0xmdLSaPN1hHeZIkNIab4X6a8gHRI_qIMzU6raVt5mf0iJXt5h7bj03Q8)
-- [Emma's 04/10 Lab](https://emory.zoom.us/rec/share/ztBrCpf5zn9Ifa_G7GHmc6ksEN7rT6a8gyEX_PpenxunVah-AI7SwgQopBFOORp-)
-- [Class 04/13](https://emory.zoom.us/rec/share/x_coMuDa23NLHbfp6nzUQpwMWaLfaaa81ygZ-fAEykggk_fuFN_maOkj71bKUuHS?startTime=1586786214000)
-- [Qihan's 04/16 Lab](https://emory.zoom.us/rec/share/-PQyAbztym9IG6uW5xneQvYNJtjAT6a81HBI-fAMzYfpELcYLd2rmxWm8nPQnRc)
-- [Emma's 04/17 Lab](https://emory.zoom.us/rec/share/xPJWaLD-rVtIQbfqr03TV5FmGYXET6a8gClI-aYLmUeFvHZ4SjN-XKbR--Xn7AGg)
-- If office hours are not posted, it means that nobody showed up, and there was no recording.
-
 ### Module 5
 
 **Class 04/15:** Start reading the *Parallel processing* notebook up to (not including) *Newton's law of cooling*.
@@ -204,11 +174,3 @@ Do all exercises in the [Module 4, Progress Report 2](https://github.com/EmoryUn
 
 **Class 04/27:** wrap up, review for final. Quiz 5 due Apr 28 10am
 
-**Recordings:**
-
-- [Class 04/15](https://emory.zoom.us/rec/share/ypxxPa37r1xLG7eWuVuHdfY_H478T6a80SRIqaIMmNZYcXK-6OK-Qo8tx3PQ60Y)
-- [Qihan's office hour 04/16](https://emory.zoom.us/rec/share/wPx3C5Ws6GJOYIHs9mDiQ7ImR6jDX6a80yFI-PAKy0sPn92fcwlTjU7qsZ3p-kof)
-- [Qihan's office hour 04/19](https://emory.zoom.us/rec/share/puxsc5zM-UlJXK_My1D5BYECPZ-_eaa80yAWrvEPzR0hM7fGoCpxW0IE2XPi5ivi)
-- [Class 04/20](https://emory.zoom.us/rec/share/ysZePqDR_H1Ibc_Q4V-cQfB_FJzZaaa81igfqfVYz0YFmRFv_fZznYFwmH0iUSYP)
-- [Class 04/22](https://emory.zoom.us/rec/share/4eNWfqDb8m5Of7OUyF3lWrQ7Q6S0eaa81XAW_ftezRsqirEMoNThgZgdig8RUC_4)
-- If office hours are not posted, it means that nobody showed up, and there was no recording.

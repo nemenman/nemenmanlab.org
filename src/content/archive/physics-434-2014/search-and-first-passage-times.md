@@ -5,7 +5,7 @@ wiki_title: "Physics 434, 2014: Search and first passage times"
 order: 80
 ---
 
-Here we focus on a particle trying to find a certain site using diffusion-like process. A very good discussion of this is in [Introduction to Probability](http://www.dartmouth.edu/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
+Here we focus on a particle trying to find a certain site using diffusion-like process. A very good discussion of this is in [Introduction to Probability](https://web.archive.org/web/20160108154003/http://www.dartmouth.edu:80/~chance/teaching_aids/books_articles/probability_book/pdf.html) by CM Grinstead and JL Snell.
 
 ### Random walk search in a different number of dimensions
 
