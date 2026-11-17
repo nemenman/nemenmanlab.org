@@ -16,6 +16,8 @@ projects:
 people:
   - "paarth-gulati"
   - "marco-li"
+  - "sean-ridout"
+  - "cagdas-kilic"
 ---
 
 Modern AI systems learn from data with remarkable success, yet we still lack a theory that explains when and why they work. We approach this question with the tools that physics developed for understanding complex systems, statistical physics and information theory. One thread of our work asks what makes a good representation of data. We showed that a single information-theoretic principle, the [multivariate information bottleneck](https://arxiv.org/abs/2310.03311), generates most variational dimensionality reduction methods and suggests new, more data-efficient ones. We also build machine-learning estimators of mutual information and use them to measure the dimensionality of data.

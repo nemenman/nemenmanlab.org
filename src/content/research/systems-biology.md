@@ -13,6 +13,12 @@ projects:
     detail: "NITMB, 2024–2026 (completed)"
   - title: "Precision of collective, distributed, dynamic gene regulation"
     detail: "NSF-ANR MCB-PoLS 2209996, 2023–2026 (completed)"
+  - title: "Simons Investigator in Theoretical Physics in Life Sciences"
+    detail: "Simons Foundation, 2021–2031"
+people:
+  - "sean-ridout"
+  - "yuying-sun"
+  - "motasem-elgamel"
 draft_note: "This direction now also covers biological information processing. The description, representative papers, projects, and people on this page are a starting point to discuss. The papers come from the Selected Publications in Ilya's CV, and the projects come from its list of current and recent grants."
 ---
 
