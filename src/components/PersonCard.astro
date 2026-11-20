@@ -21,11 +21,11 @@ const sub = ['phd', 'ms', 'coadvised'].includes(p.group)
       : <div class="grid h-full w-full place-items-center font-serif text-2xl text-muted/70" aria-hidden="true">{initials}</div>}
   </div>
   <div class="min-w-0 pt-0.5">
-    <p class="font-serif text-lg leading-tight">{p.url ? <a href={p.url} class="hover:text-navy">{p.name}</a> : p.name}</p>
+    <p class="font-serif text-lg leading-tight">{p.url ? <a href={p.url} target="_blank" rel="noopener" class="hover:text-navy">{p.name}</a> : p.name}</p>
     {role && <p class="mt-0.5 text-sm text-muted">{role}</p>}
     {sub && <p class="mt-0.5 text-sm text-muted">{sub}</p>}
     {p.interests && <p class="mt-1 text-sm text-ink/80">{p.interests}</p>}
     {p.position && <p class="mt-1 text-sm leading-snug text-ink/80"><span class="text-muted">Now: </span>{p.position}</p>}
-    {p.url && <a href={p.url} class="mt-1 inline-block text-sm text-navy hover:underline">{p.status === 'current' ? 'Web page' : 'Current page'} →</a>}
+    {p.url && <a href={p.url} target="_blank" rel="noopener" class="mt-1 inline-block text-sm text-navy hover:underline">{p.status === 'current' ? 'Web page' : 'Current page'} →</a>}
   </div>
 </li>
