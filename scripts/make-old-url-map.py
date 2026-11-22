@@ -42,7 +42,7 @@ for title, m in meta.items():
     elif title in MAIN:
         out[title] = MAIN[title]
     elif title.startswith("Group Picture"):
-        out[title] = "/people/#group-photos"
+        out[title] = "/photos/#y" + title.split()[-1]
     elif RESEARCH.match(title):
         out[title] = "/research/"
     elif PAPER.match(title):

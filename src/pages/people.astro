@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import PersonCard from '../components/PersonCard.astro';
-import { SITE, url, fmtDate, dateKey, roleRank } from '../lib/site';
+import { SITE, url, roleRank } from '../lib/site';
 
 const people = await getCollection('people');
 const pi = people.find((p) => p.data.status === 'pi')!;
@@ -33,7 +33,7 @@ const lists = [
   { key: ['summer'], title: 'Summer students' },
   { key: ['highschool'], title: 'High-school students' },
 ].map((s) => ({ ...s, people: alumni.filter((p) => s.key.includes(p.data.group)).sort(byRecent) }));
-const photos = (await getCollection('photos')).sort((a, b) => dateKey(b.data.date).localeCompare(dateKey(a.data.date)));
+const photoYears = (await getCollection('photos')).map((ph) => ph.data.date.slice(0, 4)).sort().reverse();
 ---
 <Base title="People" description="Members and alumni of the Nemenman group at Emory University, and group photos over the years.">
   <PageHeader title="People" kicker="The group, past and present" />
@@ -99,20 +99,9 @@ const photos = (await getCollection('photos')).sort((a, b) => dateKey(b.data.dat
     </div>
   </section>
 
-  <!-- Group photos -->
+  <!-- Group photos live on their own page -->
   <section class="mx-auto max-w-6xl px-4 pt-16 sm:px-6" id="group-photos">
     <h2 class="font-serif text-3xl">Group photos</h2>
-    <div class="mt-8 grid gap-x-8 gap-y-12 md:grid-cols-2">
-      {photos.map((ph) => (
-        <figure>
-          <Image src={ph.data.image} alt={`The Nemenman group, ${fmtDate(ph.data.date, 'long')}`} widths={[480, 800, 1100]} sizes="(min-width: 768px) 540px, 100vw" class="aspect-[3/2] w-full object-cover" />
-          <figcaption class="mt-3 text-sm leading-relaxed text-muted">
-            <span class="font-serif text-lg text-ink">{fmtDate(ph.data.date, 'long')}</span>
-            {ph.data.title && <span class="text-ink"> · {ph.data.title}</span>}
-            <span class="block">{ph.data.caption.replace(/^[A-Z][a-z]+ \d{4}[.,]\s*/, '').replace(ph.data.title ? new RegExp(`^${ph.data.title}\\.\\s*`) : /^$/, '')}</span>
-          </figcaption>
-        </figure>
-      ))}
-    </div>
+    <p class="mt-3"><a class="link" href={url('/photos/')}>Group photos, {photoYears.at(-1)}–{photoYears[0]} →</a></p>
   </section>
 </Base>
