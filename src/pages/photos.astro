@@ -7,11 +7,10 @@ import { url, fmtDate } from '../lib/site';
 
 // Group photos by year, newest first. Thumbnails keep each photo's own shape (no cropping);
 // clicking one opens it at full size, capped at 2000 px and never enlarged.
-// Within a year: the current group photo (`latest`) first, then file-name order. Many photos
-// carry only a year, so name them group-YYYY-N-… with N = 1 for the newest in that year.
+// Within a year: file-name order. Some photos carry only a year, so name them
+// group-YYYY-N-… with N = 1 for the newest in that year. (`latest` marks the home-page photo.)
 const photos = (await getCollection('photos')).sort((a, b) =>
   b.data.date.slice(0, 4).localeCompare(a.data.date.slice(0, 4))
-  || Number(!!b.data.latest) - Number(!!a.data.latest)
   || a.id.localeCompare(b.id));
 const items = await Promise.all(photos.map(async (ph) => {
   const { image, title, caption, date } = ph.data;
