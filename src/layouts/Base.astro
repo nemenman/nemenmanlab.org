@@ -80,5 +80,15 @@ const isPreview = import.meta.env.BASE_URL.replace(/\/$/, '') !== '';
       </div>
     </div>
   </footer>
+  <script>
+    // Links to other sites open in a new tab. Many of them (Google Scholar, publishers, X,
+    // personal pages) refuse to load inside a frame, so a new tab is the reliable way to open them.
+    for (const a of document.querySelectorAll<HTMLAnchorElement>('a[href]')) {
+      if ((a.protocol === 'http:' || a.protocol === 'https:') && a.host !== location.host) {
+        a.target = '_blank';
+        a.rel = 'noopener';
+      }
+    }
+  </script>
 </body>
 </html>
